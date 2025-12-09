@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Transform your business with custom software development by Nexora. Expert team delivering scalable, secure, and innovative digital solutions from discovery to deployment.">
+ <title>Integrated Business Solutions | Nexora</title>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 90vh;
+            background-image: url("./businessman-analyzing-stock-market-charts.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* Curved bottom corners */
+            border-radius: 0 0 80px 80px;
+        }
+
+        /* Background image overlay with medium opacity */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.65), rgba(41, 69, 225, 0.145));
+            z-index: 1;
+        }
+
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Content */
+        .hero-content {
+            position: relative;
+            text-align: center;
+            color: #fff;
+            max-width: 900px;
+            padding: 40px 20px;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Icon circle */
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 32px;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-icon:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 8px 48px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        /* Title */
+        .hero-title {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.5px;
+        }
+
+        /* Subtitle text */
+        .hero-subtitle {
+            font-size: 20px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0.95;
+        }
+
+        /* Button */
+        .hero-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4169E1, #4169E1);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(255, 106, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .hero-btn:hover::before {
+            left: 100%;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(255, 106, 0, 0.5);
+        }
+
+        .hero-btn:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+
+        /* Desktop Large (1441px+) */
+        @media (min-width: 1441px) {
+            .hero {
+                min-height: 95vh;
+                border-radius: 0 0 100px 100px;
+            }
+
+            .hero-title {
+                font-size: 64px;
+            }
+
+            .hero-subtitle {
+                font-size: 22px;
+            }
+
+            .hero-icon {
+                width: 90px;
+                height: 90px;
+                font-size: 36px;
+            }
+        }
+
+        /* Laptop (1025px - 1440px) */
+        @media (max-width: 1440px) and (min-width: 1025px) {
+            .hero {
+                min-height: 85vh;
+                border-radius: 0 0 70px 70px;
+            }
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .hero-subtitle {
+                font-size: 19px;
+            }
+        }
+
+        /* Tablet (641px - 1024px) */
+        @media (max-width: 1024px) and (min-width: 641px) {
+            .hero {
+                min-height: 75vh;
+                background-attachment: scroll;
+                border-radius: 0 0 60px 60px;
+            }
+
+            .hero-content {
+                padding: 30px 20px;
+            }
+
+            .hero-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+                margin-bottom: 25px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+                margin-bottom: 16px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+                line-height: 1.6;
+                margin-bottom: 30px;
+                max-width: 650px;
+            }
+
+            .hero-btn {
+                padding: 14px 32px;
+                font-size: 17px;
+            }
+        }
+
+        /* Mobile Large (481px - 640px) */
+        @media (max-width: 640px) and (min-width: 481px) {
+            .hero {
+                min-height: 70vh;
+                background-attachment: scroll;
+                border-radius: 0 0 40px 40px;
+            }
+
+            .hero-content {
+                padding: 25px 16px;
+            }
+
+            .hero-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 26px;
+                margin-bottom: 20px;
+                border-width: 2px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+                margin-bottom: 14px;
+                letter-spacing: -0.3px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 25px;
+                max-width: 100%;
+            }
+
+            .hero-btn {
+                padding: 12px 28px;
+                font-size: 16px;
+                border-radius: 40px;
+            }
+        }
+
+        /* Mobile Medium (376px - 480px) */
+        @media (max-width: 480px) and (min-width: 376px) {
+            .hero {
+                min-height: 65vh;
+                background-attachment: scroll;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .hero-content {
+                padding: 20px 16px;
+            }
+
+            .hero-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+                margin-bottom: 18px;
+                border-width: 2px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+                margin-bottom: 12px;
+                line-height: 1.3;
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+                line-height: 1.5;
+                margin-bottom: 22px;
+            }
+
+            .hero-btn {
+                padding: 11px 24px;
+                font-size: 15px;
+            }
+        }
+
+        /* Mobile Small (320px - 375px) */
+        @media (max-width: 375px) {
+            .hero {
+                min-height: 60vh;
+                background-attachment: scroll;
+                border-radius: 0 0 25px 25px;
+            }
+
+            .hero-content {
+                padding: 18px 14px;
+            }
+
+            .hero-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 22px;
+                margin-bottom: 16px;
+                border-width: 2px;
+            }
+
+            .hero-title {
+                font-size: 24px;
+                margin-bottom: 10px;
+                line-height: 1.3;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+
+            .hero-btn {
+                padding: 10px 22px;
+                font-size: 14px;
+                border-radius: 35px;
+            }
+        }
+
+        /* Footer responsive */
+        @media (max-width: 640px) {
+            footer .grid {
+                gap: 2rem !important;
+            }
+
+            footer h4 {
+                font-size: 1rem !important;
+            }
+        }
+
+        /*===================== MODERN TIMELINE PHASES ===================== */
+
+        .gxphase-section {
+            width: 100%;
+            padding: 90px 20px;
+            background: linear-gradient(135deg, #f4f4f7, #ffffff);
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        .gxphase-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gxphase-title {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 70px;
+            color: #1a1a1a;
+        }
+
+        /* Timeline Wrapper */
+        .gxphase-timeline {
+            position: relative;
+            margin-left: 40px;
+        }
+
+        /* Vertical Line */
+        .gxphase-timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #4169E1, #0c3dd0);
+            border-radius: 4px;
+        }
+
+        /* Each item */
+        .gxphase-item {
+            position: relative;
+            margin-bottom: 60px;
+            padding-left: 70px;
+        }
+
+        .gxphase-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Circle Number */
+        .gxphase-number {
+            position: absolute;
+            left: -3px;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #4169E1;
+            color: white;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(65, 105, 225, 0.4);
+        }
+
+        /* Card Style */
+        .gxphase-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 25px 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+            border-left: 5px solid #4169E1;
+        }
+
+        .gxphase-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Title */
+        .gxphase-heading {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        /* Text */
+        .gxphase-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* Timeline Responsive Design */
+        @media (max-width: 768px) {
+            .gxphase-section {
+                padding: 60px 16px;
+            }
+
+            .gxphase-title {
+                font-size: 32px;
+                margin-bottom: 50px;
+            }
+
+            .gxphase-timeline {
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gxphase-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .gxphase-timeline::before {
+                left: 12px;
+            }
+
+            .gxphase-item {
+                padding-left: 55px;
+                margin-bottom: 50px;
+            }
+
+            .gxphase-number {
+                width: 34px;
+                height: 34px;
+                font-size: 14px;
+                left: -3px;
+            }
+
+            .gxphase-card {
+                padding: 20px 24px;
+            }
+
+            .gxphase-heading {
+                font-size: 19px;
+            }
+
+            .gxphase-text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .gxphase-section {
+                padding: 50px 14px;
+            }
+
+            .gxphase-title {
+                font-size: 24px;
+            }
+
+            .gxphase-item {
+                padding-left: 50px;
+            }
+        }
+
+        /* ================= INTRODUCTION UNIQUE SECTION ================= */
+
+        .gxintro-section {
+            width: 100%;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #ffffff, #f3f5fa);
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        .gxintro-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gxintro-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        /* Left Text Block */
+        .gxintro-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .gxintro-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #1a1a1a;
+        }
+
+        .gxintro-text {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 18px;
+        }
+
+        /* Button */
+        .gxintro-btn {
+            display: inline-block;
+            background: #4169E1;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            transition: 0.3s ease;
+        }
+
+        .gxintro-btn:hover {
+            background: #0c3dd0;
+        }
+
+        /* Right Image Card */
+        .gxintro-right {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .gxintro-image {
+            width: 100%;
+            height: 350px;
+            background-image: url("images/software-team.jpg");
+            /* apni image ka path dalo */
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            transition: 0.3s ease;
+        }
+
+        .gxintro-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Introduction Section Responsive */
+        @media (max-width: 1024px) {
+            .gxintro-content {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gxintro-section {
+                padding: 70px 20px;
+            }
+
+            .gxintro-title {
+                font-size: 34px;
+                margin-bottom: 20px;
+            }
+
+            .gxintro-text {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+
+            .gxintro-image {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gxintro-section {
+                padding: 50px 16px;
+            }
+
+            .gxintro-content {
+                gap: 30px;
+            }
+
+            .gxintro-title {
+                font-size: 28px;
+            }
+
+            .gxintro-text {
+                font-size: 15px;
+            }
+
+            .gxintro-btn {
+                padding: 12px 28px;
+                font-size: 15px;
+            }
+
+            .gxintro-image {
+                height: 240px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .gxintro-title {
+                font-size: 24px;
+            }
+
+            .gxintro-image {
+                height: 200px;
+            }
+        }
+
+        /* Main Container */
+        .crm-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Label */
+        .section-label {
+            font-size: 15px;
+            color: #4169E1;
+            font-weight: 600;
+            margin-bottom: 8px;
+            animation: slideUp 0.8s ease-in-out;
+        }
+
+        /* Title */
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            color: #3b334d;
+            margin: 0;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Underline */
+        .underline {
+            width: 60px;
+            height: 3px;
+            background: #4169E1;
+            /* Royal Blue */
+            margin-top: 12px;
+            border-radius: 2px;
+            animation: growLine 1s ease-in-out;
+        }
+
+        /* Paragraph */
+        .crm-text {
+            margin-top: 25px;
+            color: #5a5665;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 850px;
+            animation: fadeIn 1.3s ease-in-out;
+        }
+
+        /* Points Section */
+        .crm-points {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            max-width: 820px;
+        }
+
+        .point-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            opacity: 0;
+            animation: fadeSlide 1s ease forwards;
+        }
+
+        /* Delay each point for stagger effect */
+        .point-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .point-item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .point-item:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .point-item:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .point-dot {
+            width: 10px;
+            height: 10px;
+            background: #4169E1;
+            /* Royal Blue */
+            border-radius: 50%;
+            margin-top: 6px;
+        }
+
+        .point-text {
+            font-size: 16px;
+            color: #4a4555;
+            line-height: 1.6;
+        }
+
+
+        /* ---------------- Animations ---------------- */
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes growLine {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 60px;
+            }
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ---------------- CRM Section Responsive Design ---------------- */
+
+        @media (max-width: 900px) {
+            .section-title {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .crm-container {
+                margin: 50px auto;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .crm-container {
+                padding: 15px;
+                margin: 40px 15px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .crm-text {
+                font-size: 16px;
+            }
+
+            .point-text {
+                font-size: 15px;
+            }
+
+            .crm-points {
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-label {
+                font-size: 14px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .crm-text {
+                font-size: 15px;
+            }
+
+            .point-text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .section-title {
+                font-size: 24px;
+            }
+
+            .crm-container {
+                margin: 30px 10px;
+            }
+        }
+
+        /* =====  Frequently Asked Questions ===== */
+
+        .gxacc-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .gxacc-arrow.gxacc-open {
+            transform: rotate(90deg);
+        }
+
+        .gxacc-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s ease, padding 0.3s ease;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .gxacc-content.gxacc-open {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        /* =====  NEXORA TESTIMONIAL + CONTACT SECTION ===== */
+
+        .nexora-wrapper * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .nexora-testimonial-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nexora-testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #2563eb, #3b82f6);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nexora-testimonial-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        /* Testimonials & Contact Responsive */
+        @media (max-width: 1024px) {
+            .nexora-wrapper .grid {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #nexora-testimonial-contact {
+                padding: 3rem 0;
+            }
+
+            .nexora-wrapper h2 {
+                font-size: 2rem;
+            }
+
+            .nexora-wrapper p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nexora-wrapper h2 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .nexora-wrapper .text-center.mb-12 {
+                margin-bottom: 2rem;
+            }
+
+            .nexora-testimonial-card {
+                padding: 1.5rem;
+            }
+
+            .nexora-wrapper form {
+                padding: 1.5rem;
+            }
+
+            .nexora-wrapper .grid.grid-cols-1.sm\:grid-cols-2 {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nexora-wrapper h2 {
+                font-size: 1.5rem;
+            }
+
+            .nexora-wrapper h4 {
+                font-size: 0.95rem;
+            }
+
+            .nexora-wrapper .text-sm {
+                font-size: 0.8rem;
+            }
+
+            .nexora-wrapper input,
+            .nexora-wrapper textarea {
+                padding: 0.65rem;
+                font-size: 0.9rem;
+            }
+
+            .nexora-wrapper button {
+                padding: 0.65rem 1.25rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Mobile Menu Compact Styling */
+        #mobile-menu {
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smooth scrollbar for mobile menu */
+        #mobile-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-thumb {
+            background: #4169E1;
+            border-radius: 10px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-thumb:hover {
+            background: #2d4fb3;
+        }
+
+        /* Mobile menu button active state with blue glow */
+        .mobile-menu-btn {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active {
+            color: #4169E1 !important;
+            background: rgba(65, 105, 225, 0.1);
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.2);
+        }
+
+        .mobile-menu-btn:active {
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.3), 0 0 15px rgba(65, 105, 225, 0.4);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 8px 12px;
+            color: #4B5563;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background: #f1f5f9;
+            color: #4169E1;
+        }
+
+        .mobile-link {
+            display: block;
+            padding: 12px 0;
+            font-weight: 600;
+            color: #4B5563;
+        }
+
+        .mobile-sublink {
+            color: #4B5563;
+            font-size: 15px;
+            padding: 5px 0;
+        }
+
+        .pulse-glow {
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 4px #4169E1;
+            }
+
+            to {
+                box-shadow: 0 0 15px #4169E1;
+            }
+        }
+
+        .rotate-90 {
+            transform: rotate(90deg);
+        }
+
+        /* Mobile Menu Compact Styling */
+        #mobile-menu {
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smooth scrollbar for mobile menu */
+        #mobile-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-thumb {
+            background: #4169E1;
+            border-radius: 10px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-thumb:hover {
+            background: #2d4fb3;
+        }
+
+        /* Mobile menu button active state with blue glow */
+        .mobile-menu-btn {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active {
+            color: #4169E1 !important;
+            background: rgba(65, 105, 225, 0.1);
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.2);
+        }
+
+        .mobile-menu-btn:active {
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.3), 0 0 15px rgba(65, 105, 225, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+ <div class="bg-blue-600 text-white py-2 text-sm" style="background-color: #4169E1;">
+        <div class="container mx-auto px-4 lg:px-8 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center flex-wrap gap-3 sm:gap-6">
+                <span class="flex items-center text-xs sm:text-sm"><i class="fas fa-envelope mr-2"></i>
+                    info@nexora.com</span>
+                <span class="flex items-center text-xs sm:text-sm top-bar-hide-mobile"><i
+                        class="fas fa-map-marker-alt mr-2"></i> Karachi, Pakistan</span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-4">
+                <span class="hidden sm:flex items-center text-xs sm:text-sm"><i class="fas fa-clock mr-2"></i> Open for
+                    New Projects</span>
+                <div class="flex gap-2 sm:gap-3">
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-github"></i></a>
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <!-- ========================= NAVBAR ========================= -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- LOGO -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-blue-600 p-3 rounded-xl shadow-lg pulse-glow" style="background-color: #4169E1;">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-gray-800">Nex<span class="text-blue-600">ora</span></span>
+                        <p class="text-xs text-gray-500 font-semibold">International Software House</p>
+                    </div>
+                </div>
+
+                <!-- DESKTOP MENU -->
+                <div class="hidden lg:flex items-center space-x-8">
+
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-semibold transition">Home</a>
+
+                    <!-- ========================= DESKTOP SERVICES DROPDOWN ========================= -->
+                    <div class="relative group">
+                        <a href="./services.html"
+                            class="text-gray-700 hover:text-blue-600 font-semibold transition flex items-center gap-1">
+                            Services
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </a>
+
+                        <!-- Desktop Dropdown Box -->
+                        <div
+                            class="absolute left-0 mt-3 w-72 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+
+                            <div class="flex flex-col gap-2">
+
+                                <a href="./software-development.html" class="dropdown-item">Customized Solutions</a>
+                                <a href="services-integrated.html" class="dropdown-item">Integrated Business
+                                    Solutions</a>
+                                <a href="services-product-design.html" class="dropdown-item">Product Design &
+                                    Development</a>
+                                <a href="services-mobile-apps.html" class="dropdown-item">Mobile Application
+                                    Development</a>
+                                <a href="services-web-apps.html" class="dropdown-item">Web Application Development</a>
+                                <a href="services-automation.html" class="dropdown-item">Business Process Automation</a>
+                                <a href="services-consultancy.html" class="dropdown-item">Tech Consultancy</a>
+                                <a href="services-partnership.html" class="dropdown-item">Tech Partnership</a>
+                                <a href="services-enterprise.html" class="dropdown-item">Enterprise Applications</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ========================= DROPDOWN END ========================= -->
+
+                    <a href="industries.html"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">Industries</a>
+                    <a href="index.html#projects"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">Portfolio</a>
+                    <a href="index.html#testimonials"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">Reviews</a>
+                    <a href="index.html#about"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">About</a>
+                    <a href="blogs.html" class="text-gray-700 hover:text-blue-600 font-semibold transition">Blogs</a>
+
+                    <a href="index.html#contact"
+                        class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition"
+                        style="background-color: #4169E1;">
+                        Start Project
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="mobile-menu-btn" onclick="toggleMenu()"
+                    class="mobile-menu-btn lg:hidden text-gray-700 text-2xl">
+                    <i id="mobile-menu-icon" class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- ========================= MOBILE MENU ========================= -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-4">
+
+                <a href="index.html" class="mobile-link">Home</a>
+
+                <!-- MOBILE SERVICES DROPDOWN WITH ARROW -->
+                <!-- MOBILE DROPDOWN -->
+                <div class="py-3 border-b border-gray-200">
+
+                    <!-- TOP ROW (Services + Arrow) -->
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleMobileDropdown()">
+
+                        <a href="./services.html" class="text-gray-700 font-semibold block">
+                            Services
+                        </a>
+
+                        <i id="mobileArrow" class="fas fa-chevron-right text-gray-700 text-sm transition-transform"></i>
+                    </div>
+
+                    <!-- DROPDOWN CONTENT -->
+                    <div id="mobileDropdown" class="mt-3 ml-4 hidden flex-col space-y-2">
+
+                        <a href="./software-development.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Customized Solutions
+                        </a>
+
+                        <a href="services-integrated.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Integrated Business Solutions
+                        </a>
+
+                        <a href="services-product-design.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Product Design & Development
+                        </a>
+
+                        <a href="services-mobile-apps.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Mobile Application Development
+                        </a>
+
+                        <a href="services-web-apps.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Web Application Development
+                        </a>
+
+                        <a href="services-automation.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Business Process Automation
+                        </a>
+
+                        <a href="services-consultancy.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Tech Consultancy
+                        </a>
+
+                        <a href="services-partnership.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Tech Partnership
+                        </a>
+
+                        <a href="services-enterprise.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Enterprise Applications
+                        </a>
+                    </div>
+                </div>
+                <!-- MOBILE DROPDOWN END -->
+
+                <a href="industries.html" class="mobile-link">Industries</a>
+                <a href="index.html#projects" class="mobile-link">Portfolio</a>
+                <a href="index.html#testimonials" class="mobile-link">Reviews</a>
+                <a href="index.html#about" class="mobile-link">About</a>
+                <a href="blogs.html" class="mobile-link">Blogs</a>
+
+                <a href="index.html#contact"
+                    class="block mt-4 bg-blue-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition"
+                    style="background-color: #4169E1;">
+                    Start Project
+                </a>
+            </div>
+            <!-- ========================= MOBILE MENU END ========================= -->
+
+        </div>
+    </nav>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="hero-icon">
+            <i class="fa-solid fa-link"></i>
+        </div>
+
+        <h1 class="hero-title">Integrated Business Solutions</h1>
+
+        <p class="hero-subtitle">
+            Connect and unify your ERP, CRM, HR, Finance, and business applications to create a seamless,
+            automated, and data-driven ecosystem that boosts productivity and operational efficiency.
+        </p>
+
+        <a href="#" class="hero-btn">Contact us</a>
+
+    </div>
+</section>
+
+<!-- ===================== INTRODUCTION SECTION ===================== -->
+<section class="gxintro-section">
+    <div class="gxintro-container">
+
+        <div class="gxintro-content">
+
+            <div class="gxintro-left">
+                <h2 class="gxintro-title">Introduction to Integrated Business Solutions</h2>
+
+                <p class="gxintro-text">
+                    Integrated Business Solutions help organizations eliminate disconnected systems and build
+                    a unified workflow. By connecting ERP, CRM, HR, finance, and operational platforms, your
+                    business achieves seamless automation and real-time visibility across all departments.
+                </p>
+
+                <p class="gxintro-text">
+                    With optimized processes, improved accuracy, reduced manual efforts, and centralized data,
+                    IBS enables businesses to make smarter decisions, enhance productivity, and operate more
+                    efficiently in a highly competitive environment.
+                </p>
+
+                <a href="#" class="gxintro-btn">Learn More</a>
+            </div>
+
+            <div class="gxintro-right">
+                <div class="gxintro-image"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+
+
+<section class="gxphase-section">
+    <div class="gxphase-container">
+
+        <h2 class="gxphase-title">The 5 Stages of Our Integrated Business Solutions Implementation</h2>
+
+        <div class="gxphase-timeline">
+
+            <!-- 01 -->
+            <div class="gxphase-item">
+                <div class="gxphase-number">01</div>
+                <div class="gxphase-card">
+                    <h3 class="gxphase-heading">Assessment & Planning</h3>
+                    <p class="gxphase-text">
+                        We start by analyzing your existing systems, workflows, and business processes
+                        to identify integration opportunities and define a clear roadmap for IBS deployment.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 02 -->
+            <div class="gxphase-item">
+                <div class="gxphase-number">02</div>
+                <div class="gxphase-card">
+                    <h3 class="gxphase-heading">System Design & Architecture</h3>
+                    <p class="gxphase-text">
+                        Our experts design a robust integration architecture connecting ERP, CRM, HR,
+                        Finance, and other critical systems, ensuring seamless data flow and process automation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 03 -->
+            <div class="gxphase-item">
+                <div class="gxphase-number">03</div>
+                <div class="gxphase-card">
+                    <h3 class="gxphase-heading">Implementation & Configuration</h3>
+                    <p class="gxphase-text">
+                        We deploy the IBS solution, configure workflows, integrate applications, and
+                        customize features to match your business requirements.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 04 -->
+            <div class="gxphase-item">
+                <div class="gxphase-number">04</div>
+                <div class="gxphase-card">
+                    <h3 class="gxphase-heading">Testing & Optimization</h3>
+                    <p class="gxphase-text">
+                        Rigorous testing ensures all systems communicate correctly, data accuracy is
+                        maintained, and processes are optimized for efficiency before going live.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 05 -->
+            <div class="gxphase-item">
+                <div class="gxphase-number">05</div>
+                <div class="gxphase-card">
+                    <h3 class="gxphase-heading">Monitoring & Continuous Improvement</h3>
+                    <p class="gxphase-text">
+                        After deployment, we monitor system performance, gather user feedback, and
+                        continuously refine the solution to maximize operational efficiency and ROI.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<div class="crm-container">
+
+    <div class="section-label">Introduction</div>
+
+    <h2 class="section-title">What Integrated Business Solutions Can Do For You</h2>
+
+    <div class="underline"></div>
+
+    <p class="crm-text">
+        An Integrated Business Solution (IBS) helps your organization streamline operations,
+        connect all departments, and manage resources more efficiently. It enhances decision-making,
+        reduces errors, improves process efficiency, and supports scalable business growth.
+    </p>
+
+    <!-- Animated Points -->
+    <div class="crm-points">
+
+        <div class="point-item">
+            <div class="point-dot"></div>
+            <div class="point-text">Integrate all business processes into a single cohesive system.</div>
+        </div>
+
+        <div class="point-item">
+            <div class="point-dot"></div>
+            <div class="point-text">Centralize data from finance, sales, HR, and operations for easy access.</div>
+        </div>
+
+        <div class="point-item">
+            <div class="point-dot"></div>
+            <div class="point-text">Automate routine workflows to save time and reduce operational errors.</div>
+        </div>
+
+        <div class="point-item">
+            <div class="point-dot"></div>
+            <div class="point-text">Provide real-time insights to make informed business decisions quickly.</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ============= Frequently Asked Questions ============= -->
+<section class="gxacc-wrapper py-10 px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">
+        Frequently <span class="text-blue-600">Asked</span> Questions
+    </h2>
+    <div class="gxacc-container mx-auto max-w-3xl">
+
+        <div class="gxacc-box border rounded-2xl overflow-hidden shadow">
+
+            <!-- 1: What is IBS? -->
+            <div class="gxacc-item border-b hover:bg-gray-50 transition">
+                <button class="gxacc-btn w-full p-6 flex justify-between items-center" onclick="gxaccToggle(1)"
+                    aria-expanded="false" aria-controls="gxacc-content1">
+                    <span class="gxacc-title text-xl font-semibold">What is an Integrated Business Solution?</span>
+                    <i id="gxacc-arrow1" class="fa-solid fa-arrow-right text-blue-600 text-2xl gxacc-arrow"
+                        aria-hidden="true"></i>
+                </button>
+
+                <div id="gxacc-content1" class="gxacc-content bg-gray-50 text-gray-700 px-6 leading-7">
+                    <p>
+                        An Integrated Business Solution (IBS) is a unified system that connects different departments
+                        and functions of a business, streamlining operations, data, and workflows into a single platform.
+                    </p><br>
+                    <p>
+                        IBS improves efficiency, reduces operational errors, and ensures better visibility and control
+                        over the entire business process.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2: Benefits of IBS -->
+            <div class="gxacc-item border-b hover:bg-gray-50 transition">
+                <button class="gxacc-btn w-full p-6 flex justify-between items-center" onclick="gxaccToggle(2)"
+                    aria-expanded="false" aria-controls="gxacc-content2">
+                    <span class="gxacc-title text-xl font-semibold">What are the benefits of IBS?</span>
+                    <i id="gxacc-arrow2" class="fa-solid fa-arrow-right text-blue-600 text-2xl gxacc-arrow"
+                        aria-hidden="true"></i>
+                </button>
+
+                <div id="gxacc-content2" class="gxacc-content bg-gray-50 text-gray-700 px-6 leading-7">
+                    <p>
+                        IBS allows businesses to centralize data, automate workflows, improve collaboration between teams,
+                        and generate actionable insights from real-time reporting.
+                    </p><br>
+                    <p>
+                        It ultimately saves time, reduces costs, enhances customer satisfaction, and supports faster growth.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3: Who can use IBS? -->
+            <div class="gxacc-item border-b hover:bg-gray-50 transition">
+                <button class="gxacc-btn w-full p-6 flex justify-between items-center" onclick="gxaccToggle(3)"
+                    aria-expanded="false" aria-controls="gxacc-content3">
+                    <span class="gxacc-title text-xl font-semibold">Who can benefit from IBS?</span>
+                    <i id="gxacc-arrow3" class="fa-solid fa-arrow-right text-blue-600 text-2xl gxacc-arrow"
+                        aria-hidden="true"></i>
+                </button>
+
+                <div id="gxacc-content3" class="gxacc-content bg-gray-50 text-gray-700 px-6 leading-7">
+                    <p>
+                        IBS is suitable for businesses of all sizes – from startups to large enterprises.
+                        Any organization looking to improve efficiency, integrate operations, and make data-driven
+                        decisions can benefit from an IBS platform.
+                    </p><br>
+                    <p>
+                        Industries like manufacturing, retail, finance, logistics, and services often see significant
+                        improvements after adopting IBS solutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4: How does IBS integrate with existing systems? -->
+            <div class="gxacc-item hover:bg-gray-50 transition">
+                <button class="gxacc-btn w-full p-6 flex justify-between items-center" onclick="gxaccToggle(4)"
+                    aria-expanded="false" aria-controls="gxacc-content4">
+                    <span class="gxacc-title text-xl font-semibold">How does IBS integrate with existing systems?</span>
+                    <i id="gxacc-arrow4" class="fa-solid fa-arrow-right text-blue-600 text-2xl gxacc-arrow"
+                        aria-hidden="true"></i>
+                </button>
+
+                <div id="gxacc-content4" class="gxacc-content bg-gray-50 text-gray-700 px-6 leading-7">
+                    <p>
+                        Modern IBS platforms are designed to integrate seamlessly with existing software, databases,
+                        and tools via APIs and standardized protocols.
+                    </p><br />
+                    <p>
+                        This ensures a smooth transition, minimal disruption, and a unified platform where all systems
+                        communicate effectively.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ========== IBS CLIENT TESTIMONIAL + CONTACT SECTION ========== -->
+<section id="nexora-testimonial-contact" class="nexora-wrapper bg-gray-50 py-16">
+    <div class="container mx-auto max-w-6xl px-4">
+
+        <!-- Title -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+                What Our <span class="text-blue-600">Clients</span> Say
+            </h2>
+            <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+                Hear from our clients how Integrated Business Solutions transformed their operations.
+            </p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+            <!-- Single Testimonial -->
+            <div
+                class="nexora-testimonial-card bg-white p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div
+                        class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        AM
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="font-bold text-gray-800">Amina Malik</h4>
+                        <p class="text-gray-500 text-sm">COO, FinServe Solutions</p>
+                    </div>
+                </div>
+
+                <div class="flex mb-3">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                </div>
+
+                <p class="text-gray-600 text-sm">
+                    "IBS helped us integrate all our departments into one platform, saving time and improving efficiency across the board."
+                </p>
+            </div>
+
+            <!-- Single Testimonial -->
+            <div
+                class="nexora-testimonial-card bg-white p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div
+                        class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        RS
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="font-bold text-gray-800">Ravi Sharma</h4>
+                        <p class="text-gray-500 text-sm">Founder, RetailPro</p>
+                    </div>
+                </div>
+
+                <div class="flex mb-3">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                </div>
+
+                <p class="text-gray-600 text-sm">
+                    "Our sales and customer service teams now operate in perfect sync thanks to IBS. The results have been amazing."
+                </p>
+            </div>
+
+            <!-- Single Testimonial -->
+            <div
+                class="nexora-testimonial-card bg-white p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div
+                        class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        MK
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="font-bold text-gray-800">Michael Kaur</h4>
+                        <p class="text-gray-500 text-sm">CTO, HealthSync</p>
+                    </div>
+                </div>
+
+                <div class="flex mb-3">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                </div>
+
+                <p class="text-gray-600 text-sm">
+                    "The IBS platform unified our processes, making data-driven decisions faster and easier than ever."
+                </p>
+            </div>
+
+            <!-- Copy the above card for additional testimonials -->
+
+        </div>
+
+        <!-- Contact Section -->
+        <div class="mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+                    Get In <span class="text-blue-600">Touch</span>
+                </h2>
+                <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+                    Fill out the form below and our team will get back to you.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+                <!-- Contact Info -->
+                <div class="bg-white p-8 rounded-2xl shadow-md">
+                    <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+
+                    <div class="space-y-6">
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Address</h4>
+                                <p class="text-gray-600 text-sm">Karachi, Pakistan</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600 text-sm">info@nexora.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-blue-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600 text-sm">+92 300 1234567</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="bg-white p-8 rounded-2xl shadow-md space-y-6">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Full Name" class="border p-3 rounded-lg w-full">
+                        <input type="email" placeholder="Email Address" class="border p-3 rounded-lg w-full">
+                    </div>
+
+                    <input type="text" placeholder="Subject" class="border p-3 rounded-lg w-full">
+
+                    <textarea rows="5" placeholder="Message" class="border p-3 rounded-lg w-full"></textarea>
+
+                    <button
+                        class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="p-3 rounded-xl bg-blue-600">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Nex<span class="text-blue-500">ora</span></span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        International software house delivering enterprise solutions worldwide.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-500 transition">Web Development</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">AI Integration</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Enterprise CRM</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-500 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Testimonials</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Connect</h4>
+                    <div class="flex space-x-3 mb-4">
+                        <a href="#" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        <i class="fas fa-envelope mr-2"></i>info@nexora.com
+                    </p>
+                    <p class="text-gray-400 text-sm mt-2">
+                        <i class="fas fa-phone mr-2"></i>+92 300 1234567
+                    </p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Nexora. All rights reserved.Built with
+                        excellence.</p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menuIcon = document.getElementById('mobile-menu-icon');
+
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.classList.toggle('active');
+
+            // Toggle icon between bars and X
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+        }
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                }
+            });
+        });
+        // Navbar Scroll Effect
+        let lastScroll = 0;
+        const navbar = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Accordion Toggle Function with Accessibility Support
+        function gxaccToggle(n) {
+            // Close all other accordions
+            for (let i = 1; i <= 4; i++) {
+                const box = document.getElementById("gxacc-content" + i);
+                const arrow = document.getElementById("gxacc-arrow" + i);
+                const button = document.querySelector(`[aria-controls="gxacc-content${i}"]`);
+
+                if (i !== n) {
+                    box.style.maxHeight = "0px";
+                    box.classList.remove("gxacc-open");
+                    arrow.classList.remove("gxacc-open");
+                    if (button) button.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            // Toggle the clicked accordion
+            const content = document.getElementById("gxacc-content" + n);
+            const arrow = document.getElementById("gxacc-arrow" + n);
+            const button = document.querySelector(`[aria-controls="gxacc-content${n}"]`);
+
+            if (content.style.maxHeight !== "0px" && content.style.maxHeight !== "") {
+                content.style.maxHeight = "0px";
+                content.classList.remove("gxacc-open");
+                arrow.classList.remove("gxacc-open");
+                if (button) button.setAttribute("aria-expanded", "false");
+            } else {
+                // Set max-height to scrollHeight + extra padding to ensure all content is visible
+                content.style.maxHeight = (content.scrollHeight + 50) + "px";
+                content.classList.add("gxacc-open");
+                arrow.classList.add("gxacc-open");
+                if (button) button.setAttribute("aria-expanded", "true");
+            }
+        }
+        // <!-- MOBILE MENU SCRIPT --> 
+
+        function toggleMobileDropdown() {
+            const box = document.getElementById("mobileDropdown");
+            const arrow = document.getElementById("mobileArrow");
+
+            box.classList.toggle("hidden");
+            arrow.classList.toggle("rotate-90");
+        }
+
+
+    </script>
+
+
+
+
+
+
+
+</body>

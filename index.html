@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora - International Software House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .hero-gradient {
+            background: #001F3F;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .text-gradient {
+            color: #4169E1;
+        }
+
+        @keyframes gradient-shift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.3);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+            }
+        }
+
+        .project-card img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.15);
+        }
+
+        .project-overlay {
+            background: rgba(0, 31, 63, 0.85);
+        }
+
+        .trust-badge {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+        .badge-float {
+            animation: badge-float 3s ease-in-out infinite;
+        }
+
+        @keyframes badge-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
+
+        /* ===== RESPONSIVE DESIGN ENHANCEMENTS (COMPREHENSIVE) ===== */
+
+        /* 1. Global Container & Layout Bases */
+        .container {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            /* px-4 default */
+            padding-right: 1rem;
+        }
+
+        /* 2. Device-Specific Breakpoints */
+
+        /* --- Ultra Small Devices (Fold phones, older iPhones) < 375px --- */
+        @media (max-width: 374px) {
+            .container {
+                padding-left: 0.75rem !important;
+                /* px-3 */
+                padding-right: 0.75rem !important;
+            }
+
+            h1 {
+                font-size: 1.75rem !important;
+                /* Smaller H1 */
+                word-wrap: break-word;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+            }
+
+            .hero-gradient h1 {
+                font-size: 2rem !important;
+            }
+
+            /* Force single column for stats on very small screens to avoid overlap */
+            .grid-cols-2 {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Adjust Service Box for tight spaces */
+            .service-box {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+
+            .service-box img {
+                margin: 0 0 10px 0 !important;
+                width: 50px;
+                /* Smaller icons */
+                height: 50px;
+            }
+        }
+
+        /* --- Mobile Devices (Standard) 375px - 639px --- */
+        @media (min-width: 375px) and (max-width: 639px) {
+            .hero-gradient h1 {
+                font-size: 2.25rem !important;
+                line-height: 1.25 !important;
+            }
+
+            .grid-cols-3,
+            .grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                /* Allow 2 cols for simple grids */
+            }
+
+            /* Keep larger grids single column */
+            .md\:grid-cols-2,
+            .lg\:grid-cols-3,
+            .lg\:grid-cols-4 {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* --- Global Mobile (covering all phones) < 640px --- */
+        @media (max-width: 640px) {
+
+            /* General Section Comfort */
+            section {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+
+            /* Hide decorative / non-essential elements */
+            .floating,
+            .badge-float,
+            .top-bar-hide-mobile {
+                display: none !important;
+            }
+
+            /* Adjust Fonts */
+            .text-5xl,
+            .text-6xl {
+                font-size: 2.5rem !important;
+                /* Standardize large text */
+            }
+
+            /* Navigation Simplification */
+            nav .h-20 {
+                height: 4rem !important;
+            }
+
+            nav .text-2xl {
+                font-size: 1.25rem !important;
+            }
+
+            /* Footer Stacking */
+            footer .grid {
+                gap: 2.5rem !important;
+            }
+
+            /* Form Input Zoom Fix (iOS) */
+            input,
+            select,
+            textarea {
+                font-size: 16px !important;
+            }
+        }
+
+        /* --- Tablet Portrait (iPad Mini, standard tablets vertical) 641px - 768px --- */
+        @media (min-width: 641px) and (max-width: 768px) {
+            .container {
+                max-width: 640px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .hero-gradient h1 {
+                font-size: 3rem !important;
+            }
+
+            /* Ensure 2 columns for most content grids */
+            .lg\:grid-cols-3,
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Stats Grid: 2x2 */
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        /* --- Tablet Landscape / Small Laptops 769px - 1024px --- */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            .hero-gradient h1 {
+                font-size: 3.5rem !important;
+            }
+
+            /* Optimization for 3-column layouts */
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 1rem !important;
+            }
+
+            /* Keep 4-column layouts as 2x2 for readability */
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        /* --- Desktop Standard 1025px - 1280px --- */
+        @media (min-width: 1025px) and (max-width: 1280px) {
+            .container {
+                max-width: 1024px;
+            }
+        }
+
+        /* --- Large Screens 1281px - 1535px --- */
+        @media (min-width: 1281px) and (max-width: 1535px) {
+            .container {
+                max-width: 1280px;
+            }
+        }
+
+        /* --- Extra Large Screens / 4K 1536px+ --- */
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1440px;
+                /* Cap width for readability */
+            }
+
+            .hero-gradient {
+                background-size: cover;
+                /* Ensure BG looks good */
+            }
+        }
+
+        /* 3. Component Specific Responsive Tweaks */
+
+        /* Project Cards */
+        @media (max-width: 768px) {
+            .project-card img {
+                height: 200px !important;
+                /* Consistent height on mobile/tab */
+            }
+
+            /* Ensure overlay text is readable */
+            .project-overlay h3 {
+                font-size: 1.25rem !important;
+            }
+        }
+
+
+
+        /* Stats Section Specifics */
+        @media (max-width: 480px) {
+            .stats-grid .text-5xl {
+                font-size: 2rem !important;
+            }
+        }
+
+        /* 
+           Fix for Stats Section Overlap 
+           Only apply negative margin on screens larger than mobile
+           On mobile, add some spacing.
+        */
+        .stats-custom-margin {
+            margin-top: 0;
+            padding-top: 4rem;
+            /* separation from button */
+        }
+
+        @media (min-width: 1024px) {
+            .stats-custom-margin {
+                margin-top: -4rem;
+                /* -mt-16 */
+                padding-top: 3rem;
+            }
+        }
+
+        /* Testimonials Responsive - ensure full width on mobile */
+        @media (max-width: 640px) {
+            .testimonial-card {
+                padding: 1.5rem !important;
+                /* Smaller padding */
+                margin-bottom: 1rem;
+            }
+
+            /* Stack stars for reliability */
+            .testimonial-card .flex {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Reduced Motion Preference */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ===== INDUSTRIES SECTION CARDS STYLES ===== */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+        }
+
+        @media (min-width: 640px) {
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .industries-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .industries-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .industries-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .industry-card {
+            background: white;
+            border: 1px solid #dce7f7;
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .industry-card:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .industry-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 26px;
+        }
+
+        /* Icon Background Colors */
+        .industry-icon.icon-yellow {
+            background: #ffefb5;
+        }
+
+        .industry-icon.icon-green {
+            background: #d6f7d6;
+        }
+
+        .industry-icon.icon-pink {
+            background: #ffe1e1;
+        }
+
+        .industry-icon.icon-blue {
+            background: #e2efff;
+        }
+
+        .industry-icon.icon-mint {
+            background: #dff7e8;
+        }
+
+        .industry-icon.icon-red {
+            background: #ffdada;
+        }
+
+        .industry-icon.icon-light-yellow {
+            background: #fff4cc;
+        }
+
+        .industry-card-title {
+            font-size: 18px;
+            color: #222;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Arrow icon */
+        .industry-arrow {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 18px;
+            color: #3a8df0;
+        }
+
+        /* ===== SERVICES SECTION STYLES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px 80px;
+            }
+        }
+
+        /* SERVICE BOX BASE STYLE */
+        .service-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* ICON LEFT / RIGHT HANDLING */
+        .service-icon-left {
+            flex-direction: row;
+            text-align: left;
+        }
+
+        .service-icon-right {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .service-icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        /* Service Icon Colors */
+        .service-icon-box.icon-blue {
+            background: #3498db;
+        }
+
+        .service-icon-box.icon-green {
+            background: #2ecc71;
+        }
+
+        .service-icon-box.icon-orange {
+            background: #e67e22;
+        }
+
+        .service-icon-box.icon-purple {
+            background: #9b59b6;
+        }
+
+        .service-icon-box.icon-teal {
+            background: #1abc9c;
+        }
+
+        .service-icon-box.icon-yellow {
+            background: #f1c40f;
+        }
+
+        .service-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .service-text {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.5;
+            max-width: 330px;
+        }
+
+        :root {
+            --page-bg: #ffffff;
+            --muted-card: #f1f6f9;
+            --card-border: rgba(18, 30, 45, 0.05);
+            --text-dark: #071227;
+            --muted-text: #4b5563;
+            --accent-green: #00d26a;
+            --blue-1: #042a56;
+            --blue-2: #0e4b88;
+        }
+
+        /* =====================================
+   MOBILE FIX → All items left-aligned
+   ===================================== */
+        @media (max-width: 767px) {
+
+            /* Standard Mobile: Icon Left, Text Right */
+            .service-box {
+                flex-direction: row !important;
+                text-align: left !important;
+                align-items: flex-start !important;
+            }
+
+            .service-box img {
+                margin-right: 15px !important;
+                margin-left: 0 !important;
+                margin-bottom: 0 !important;
+                /* Reset any bottom margin */
+            }
+        }
+
+        /* Ultra Small Override (< 375px) */
+        @media (max-width: 374px) {
+            .service-box {
+                flex-direction: column !important;
+                text-align: left !important;
+            }
+
+            .service-box img {
+                margin-right: 0 !important;
+                margin-bottom: 15px !important;
+            }
+        }
+
+
+
+
+        /* ===== WHY CHOOSE US SECTION STYLES ===== */
+        /* Scoped with wcu- prefix to avoid conflicts */
+
+        /* fixed centered container wrapper */
+        .wcu-container-wrapper {
+            width: 1280px;
+            max-width: calc(100% - 48px);
+            margin: 0 auto;
+        }
+
+        /* small pill above heading */
+        .wcu-pill {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: #fff;
+            border: 1px solid rgba(7, 18, 39, 0.04);
+            color: #14233a;
+            font-weight: 600;
+            font-size: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 0 rgba(7, 18, 39, 0.02);
+        }
+
+        /* hero heading */
+        .wcu-hero {
+            margin-top: 6px;
+            margin-bottom: 28px;
+        }
+
+        .wcu-hero h1 {
+            font-size: 40px;
+            line-height: 1.02;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0 0 18px 0;
+            letter-spacing: -0.4px;
+        }
+
+        .wcu-hero h1 .wcu-brand {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        /* layout: left wide grid + right tall card */
+        .wcu-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* left column: small cards stacked */
+        .wcu-left-col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 160px;
+            gap: 18px;
+        }
+
+        /* top two cards look */
+        .wcu-feature-card {
+            background: var(--muted-card);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--card-border);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            box-shadow: 0 2px 0 rgba(15, 25, 35, 0.02);
+        }
+
+        .wcu-feature-card .wcu-icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(7, 18, 39, 0.06);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(240, 245, 250, 0.95));
+            flex: 0 0 44px;
+        }
+
+        .wcu-feature-card h3 {
+            margin: 2px 0 8px 0;
+            font-size: 18px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .wcu-feature-card p {
+            margin: 0;
+            color: var(--muted-text);
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        /* big full-width card spanning both columns below */
+        .wcu-feature-large {
+            grid-column: 1 / span 2;
+            background: var(--muted-card);
+            border-radius: 12px;
+            padding: 22px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            border: 1px solid var(--card-border);
+        }
+
+        .wcu-feature-large .wcu-icon-wrap {
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+        }
+
+        .wcu-feature-large h3 {
+            margin: 6px 0 8px 0;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .wcu-feature-large p {
+            margin: 0;
+            color: var(--muted-text);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* right tall promo card */
+        .wcu-promo {
+            background: linear-gradient(180deg, var(--blue-1), var(--blue-2));
+            color: #e8f4ff;
+            border-radius: 12px;
+            padding: 28px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(6, 18, 40, 0.06);
+            border: 1px solid rgba(6, 18, 40, 0.07);
+        }
+
+        .wcu-promo .wcu-promo-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .wcu-promo h3 {
+            color: #eaf6ff;
+            font-weight: 700;
+            font-size: 20px;
+            margin: 10px 0 12px 0;
+            line-height: 1.12;
+        }
+
+        .wcu-promo p {
+            color: rgba(234, 246, 255, 0.88);
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0 0 18px 0;
+        }
+
+        .wcu-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #00e07a, #00c96f);
+            color: #00311f;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(0, 179, 109, 0.18);
+            width: fit-content;
+        }
+
+        /* small responsive tweaks and spacing */
+        @media (max-width:1100px) {
+            .wcu-container-wrapper {
+                width: 100%;
+                padding: 24px;
+            }
+
+            .wcu-grid {
+                grid-template-columns: 1fr 360px;
+                gap: 18px;
+            }
+
+            .wcu-left-col {
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: 150px;
+                gap: 14px;
+            }
+        }
+
+        @media (max-width:880px) {
+            .wcu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wcu-left-col {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 140px;
+                gap: 14px;
+            }
+
+            .wcu-promo {
+                order: 2;
+            }
+        }
+
+        /* subtle hover for desktop (optional but matches modern UI) */
+        .wcu-feature-card:hover,
+        .wcu-feature-large:hover,
+        .wcu-promo:hover {
+            transform: translateY(-6px);
+            transition: transform 220ms ease;
+            box-shadow: 0 14px 40px rgba(10, 20, 40, 0.06);
+        }
+
+        /* small text sizes match screenshot proportions */
+        small.desc {
+            display: block;
+            color: var(--muted-text);
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        /* utility spacing for icon + text */
+        .wcu-feature-content {
+            flex: 1;
+        }
+
+        /* make sure icons' stroke color */
+        svg.icon {
+            width: 22px;
+            height: 22px;
+            display: block;
+        }
+
+        svg.wcu-icon-stroke {
+            width: 20px;
+            height: 20px;
+            display: block;
+            stroke: #102233;
+            stroke-width: 1.6;
+            fill: none
+        }
+
+        /* for light-on-dark promo icon */
+        svg.wcu-icon-white {
+            width: 20px;
+            height: 20px;
+            display: block;
+            stroke: rgba(255, 255, 255, 0.9);
+            stroke-width: 1.6;
+            fill: none
+        }
+
+        /* ===== WHY CHOOSE US RESPONSIVE STYLES ===== */
+        /* Mobile: ≤640px */
+        @media (max-width: 640px) {
+            .wcu-container-wrapper {
+                padding: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .wcu-pill {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+
+            .wcu-hero h1 {
+                font-size: 28px !important;
+                line-height: 1.25 !important;
+            }
+
+            /* Switch to Flexbox for better mobile stacking control */
+            .wcu-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 24px !important;
+                grid-template-columns: none !important;
+            }
+
+            .wcu-left-col {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 16px !important;
+                grid-template-columns: none !important;
+                grid-auto-rows: auto !important;
+            }
+
+            /* Fix cards to be full width and stacked content */
+            .wcu-feature-card,
+            .wcu-feature-large {
+                width: 100% !important;
+                padding: 24px !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 16px !important;
+                /* Reset grid properties just in case */
+                grid-column: auto !important;
+            }
+
+            .wcu-feature-card h3,
+            .wcu-feature-large h3 {
+                font-size: 18px !important;
+                margin-top: 4px !important;
+            }
+
+            .wcu-feature-card p,
+            .wcu-feature-large p {
+                font-size: 14px !important;
+                color: #556 !important;
+                /* Slightly darker for readability */
+            }
+
+            .wcu-promo {
+                padding: 24px !important;
+                min-height: auto !important;
+                width: 100% !important;
+                order: 10;
+                /* Force to bottom */
+            }
+
+            .wcu-promo h3 {
+                font-size: 20px !important;
+            }
+
+            .wcu-promo p {
+                font-size: 14px !important;
+                margin-bottom: 24px !important;
+            }
+
+            .wcu-cta {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Disable hover animations on mobile for better performance */
+            .wcu-feature-card:hover,
+            .wcu-feature-large:hover,
+            .wcu-promo:hover {
+                transform: none !important;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+            }
+        }
+
+        /* Tablet & Small Laptop: 641px - 1024px */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .wcu-container-wrapper {
+                width: 100% !important;
+                padding: 0 1rem !important;
+            }
+
+            .wcu-hero h1 {
+                font-size: 36px !important;
+            }
+
+            /* Stack the main layout: Features on top, Promo on bottom */
+            .wcu-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 30px !important;
+            }
+
+            /* Make the features grid 2 columns wide */
+            .wcu-left-col {
+                width: 100% !important;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                grid-auto-rows: auto !important;
+                /* Allow variable height */
+                gap: 20px !important;
+            }
+
+            /* Normal cards */
+            .wcu-feature-card {
+                height: 100% !important;
+                /* Fill cell height */
+                min-height: 160px !important;
+            }
+
+            /* Large card spans both columns */
+            .wcu-feature-large {
+                grid-column: 1 / -1 !important;
+                width: 100% !important;
+                flex-direction: row !important;
+                /* Keep icon side-by-side if space allows */
+                align-items: flex-start !important;
+            }
+
+            /* Promo card at the bottom, full width, horizontal layout if possible */
+            .wcu-promo {
+                width: 100% !important;
+                order: 2;
+                min-height: auto !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                padding: 30px !important;
+                gap: 20px !important;
+            }
+
+            /* Adjust promo content for horizontal layout */
+            .wcu-promo>div:first-child {
+                flex: 1;
+            }
+
+            .wcu-promo p {
+                margin-bottom: 0 !important;
+                max-width: 90%;
+            }
+
+            /* On smaller tablets, revert promo to vertical internal layout */
+            @media (max-width: 768px) {
+                .wcu-promo {
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                }
+
+                .wcu-promo p {
+                    margin-bottom: 20px !important;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        /* Desktop: ≥1025px - ensure full layout */
+        @media (min-width: 1025px) {
+            .wcu-grid {
+                grid-template-columns: 1fr 380px;
+            }
+        }
+
+        /* ===== blog CSS START ===== */
+        .blog-section {
+            padding: 60px 20px;
+            background: #ffffff;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .blog-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #4169E1;
+            margin-bottom: 10px;
+        }
+
+        .blog-subtitle {
+            color: #555;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: #f7f9ff;
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 20px;
+            transition: 0.3s ease;
+            border: 1px solid #e1e4fa;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-img img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .blog-headline {
+            color: #4169E1;
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .blog-text {
+            font-size: 15px;
+            color: #444;
+            margin: 12px 0;
+            line-height: 1.5;
+        }
+
+        .blog-date {
+            display: block;
+            margin: 8px 0;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .blog-btn {
+            background: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .blog-btn:hover {
+            background: #2d4fb3;
+        }
+
+        @media (max-width: 992px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-title {
+                font-size: 28px;
+            }
+        }
+
+        /* ===== blog CSS END ===== */
+        .dropdown-item {
+            display: block;
+            padding: 8px 12px;
+            color: #4B5563;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background: #f1f5f9;
+            color: #4169E1;
+        }
+
+        .mobile-link {
+            display: block;
+            padding: 12px 0;
+            font-weight: 600;
+            color: #4B5563;
+        }
+
+        .mobile-sublink {
+            color: #4B5563;
+            font-size: 15px;
+            padding: 5px 0;
+        }
+
+        .pulse-glow {
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 4px #4169E1;
+            }
+
+            to {
+                box-shadow: 0 0 15px #4169E1;
+            }
+        }
+
+        .rotate-90 {
+            transform: rotate(90deg);
+        }
+
+        /* Mobile Menu Compact Styling */
+        #mobile-menu {
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smooth scrollbar for mobile menu */
+        #mobile-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-thumb {
+            background: #4169E1;
+            border-radius: 10px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-thumb:hover {
+            background: #2d4fb3;
+        }
+
+        /* Mobile menu button active state with blue glow */
+        .mobile-menu-btn {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active {
+            color: #4169E1 !important;
+            background: rgba(65, 105, 225, 0.1);
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.2);
+        }
+
+        .mobile-menu-btn:active {
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.3), 0 0 15px rgba(65, 105, 225, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Top Info Bar -->
+    <div class="bg-blue-600 text-white py-2 text-sm" style="background-color: #4169E1;">
+        <div class="container mx-auto px-4 lg:px-8 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center flex-wrap gap-3 sm:gap-6">
+                <span class="flex items-center text-xs sm:text-sm"><i class="fas fa-envelope mr-2"></i>
+                    info@nexora.com</span>
+                <span class="flex items-center text-xs sm:text-sm top-bar-hide-mobile"><i
+                        class="fas fa-map-marker-alt mr-2"></i> Karachi, Pakistan</span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-4">
+                <span class="hidden sm:flex items-center text-xs sm:text-sm"><i class="fas fa-clock mr-2"></i> Open for
+                    New Projects</span>
+                <div class="flex gap-2 sm:gap-3">
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-github"></i></a>
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= NAVBAR ========================= -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- LOGO -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-blue-600 p-3 rounded-xl shadow-lg pulse-glow" style="background-color: #4169E1;">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-gray-800">Nex<span class="text-blue-600">ora</span></span>
+                        <p class="text-xs text-gray-500 font-semibold">International Software House</p>
+                    </div>
+                </div>
+
+                <!-- DESKTOP MENU -->
+                <div class="hidden lg:flex items-center space-x-8">
+
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-semibold transition">Home</a>
+
+                    <!-- ========================= DESKTOP SERVICES DROPDOWN ========================= -->
+                    <div class="relative group">
+                        <a href="./services.html"
+                            class="text-gray-700 hover:text-blue-600 font-semibold transition flex items-center gap-1">
+                            Services
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </a>
+
+                        <!-- Desktop Dropdown Box -->
+                        <div
+                            class="absolute left-0 mt-3 w-72 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+
+                            <div class="flex flex-col gap-2">
+
+                                <a href="./software-development.html" class="dropdown-item">Customized Solutions</a>
+                                <a href="./IBS.html" class="dropdown-item">Integrated Business
+                                    Solutions</a>
+                                <a href="./prd-dev.html" class="dropdown-item">Product Design &
+                                    Development</a>
+                                <a href="./mobapp-dev.html" class="dropdown-item">Mobile Application
+                                    Development</a>
+                                <a href="services-web-apps.html" class="dropdown-item">Web Application Development</a>
+                                <a href="services-automation.html" class="dropdown-item">Business Process Automation</a>
+                                <a href="services-consultancy.html" class="dropdown-item">Tech Consultancy</a>
+                                <a href="services-partnership.html" class="dropdown-item">Tech Partnership</a>
+                                <a href="services-enterprise.html" class="dropdown-item">Enterprise Applications</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ========================= DROPDOWN END ========================= -->
+
+                    <a href="industries.html"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">Industries</a>
+                    <a href="index.html#projects"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">Portfolio</a>
+                    <a href="index.html#testimonials"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">Reviews</a>
+                    <a href="index.html#about"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">About</a>
+                    <a href="blogs.html" class="text-gray-700 hover:text-blue-600 font-semibold transition">Blogs</a>
+
+                    <a href="index.html#contact"
+                        class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition"
+                        style="background-color: #4169E1;">
+                        Start Project
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="mobile-menu-btn" onclick="toggleMenu()"
+                    class="mobile-menu-btn lg:hidden text-gray-700 text-2xl">
+                    <i id="mobile-menu-icon" class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- ========================= MOBILE MENU ========================= -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-4">
+
+                <a href="index.html" class="mobile-link">Home</a>
+
+                <!-- MOBILE SERVICES DROPDOWN WITH ARROW -->
+                <!-- MOBILE DROPDOWN -->
+                <div class="py-3 border-b border-gray-200">
+
+                    <!-- TOP ROW (Services + Arrow) -->
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleMobileDropdown()">
+
+                        <a href="./services.html" class="text-gray-700 font-semibold block">
+                            Services
+                        </a>
+
+                        <i id="mobileArrow" class="fas fa-chevron-right text-gray-700 text-sm transition-transform"></i>
+                    </div>
+
+                    <!-- DROPDOWN CONTENT -->
+                    <div id="mobileDropdown" class="mt-3 ml-4 hidden flex-col space-y-2">
+
+                        <a href="./software-development.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Customized Solutions
+                        </a>
+
+                        <a href="./IBS.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Integrated Business Solutions
+                        </a>
+
+                        <a href="./prd-dev.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Product Design & Development
+                        </a>
+
+                        <a href="./mobapp-dev.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Mobile Application Development
+                        </a>
+
+                        <a href="#"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Web Application Development
+                        </a>
+
+                        <a href="#"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Business Process Automation
+                        </a>
+
+                        <a href="#"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Tech Consultancy
+                        </a>
+
+                        <a href="#"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Tech Partnership
+                        </a>
+
+                        <a href="#"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Enterprise Applications
+                        </a>
+                    </div>
+                </div>
+                <!-- MOBILE DROPDOWN END -->
+
+                <a href="industries.html" class="mobile-link">Industries</a>
+                <a href="index.html#projects" class="mobile-link">Portfolio</a>
+                <a href="index.html#testimonials" class="mobile-link">Reviews</a>
+                <a href="index.html#about" class="mobile-link">About</a>
+                <a href="blogs.html" class="mobile-link">Blogs</a>
+
+                <a href="index.html#contact"
+                    class="block mt-4 bg-blue-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition"
+                    style="background-color: #4169E1;">
+                    Start Project
+                </a>
+            </div>
+            <!-- ========================= MOBILE MENU END ========================= -->
+
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-16 pb-20 sm:pt-24 sm:pb-32 lg:pt-32 lg:pb-40 relative">
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="flex flex-wrap gap-2 sm:gap-4 mb-4 sm:mb-6">
+                        <div class="trust-badge rounded-full px-4 py-2 flex items-center space-x-2">
+                            <i class="fas fa-shield-alt text-blue-600"></i>
+                            <span class="text-sm font-semibold text-gray-800">99% Satisfaction</span>
+                        </div>
+                        <div class="trust-badge rounded-full px-4 py-2 flex items-center space-x-2">
+                            <i class="fas fa-clock text-blue-600"></i>
+                            <span class="text-sm font-semibold text-gray-800">3+ Years</span>
+                        </div>
+                        <div class="trust-badge rounded-full px-4 py-2 flex items-center space-x-2">
+                            <i class="fas fa-globe text-blue-600"></i>
+                            <span class="text-sm font-semibold text-gray-800">Global Clients</span>
+                        </div>
+                    </div>
+
+                    <h1
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight">
+                        Nexora <span class="text-gradient">International</span> Software House
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 leading-relaxed">
+                        We build enterprise-grade software, AI-powered solutions, and high-performance web applications
+                        for global businesses. Scalable, secure, and future-ready digital products delivered with
+                        precision.
+                    </p>
+
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
+                            style="background-color: #4169E1;">
+                            <i class="fas fa-rocket mr-2"></i> Start Your Project
+                        </button>
+                        <button
+                            class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-gray-800 transition backdrop-blur-sm text-lg">
+                            <i class="fas fa-phone-alt mr-2"></i> Schedule Call
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block relative">
+                    <div class="floating">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&h=500&fit=crop"
+                            alt="Software Development" class="rounded-2xl shadow-2xl">
+                    </div>
+
+                    <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-2xl p-6 badge-float">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-100 rounded-full p-4">
+                                <i class="fas fa-check-circle text-green-600 text-3xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">Enterprise</div>
+                                <div class="text-gray-600 font-semibold">Solutions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Tech Stack Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Powered By Modern Technologies</h3>
+            </div>
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 sm:gap-6 items-center">
+                <div class="flex justify-center">
+                    <div>
+
+                        <i class="fab fa-react text-5xl text-blue-500"></i>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div>
+
+                        <i class="fab fa-node text-5xl text-green-600"></i>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div>
+
+                        <i class="fab fa-python text-5xl text-blue-400"></i>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div>
+
+                        <i class="fab fa-wordpress text-5xl text-blue-600"></i>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+
+
+                    <i class="fab fa-js text-5xl text-yellow-500"></i>
+
+                </div>
+                <div class="flex justify-center">
+                    <div>
+
+                        <i class="fas fa-database text-5xl text-gray-600"></i>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div>
+
+                        <i class="fas fa-robot text-5xl text-purple-600"></i>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div>
+
+                        <i class="fas fa-mobile-alt text-5xl text-blue-500"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-4">
+                    OUR SERVICES
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Enterprise Software Solutions</h2>
+                <p class="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
+                    Comprehensive development services backed by modern tech stack and proven delivery excellence
+                </p>
+            </div>
+
+            <div class="services-grid">
+
+                <!-- LEFT COLUMN (ICON RIGHT) -->
+                <div class="service-box service-icon-right">
+                    <img src="./crm.jpg" alt="">
+                    <div>
+                        <div class="service-title">Enterprise CRM Development</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
+
+                        <a
+                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
+                            Learn More →
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="service-box service-icon-left">
+                    <img src="./emss.jpg" alt="">
+                    <div>
+                        <div class="service-title">Enterprise EMS</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
+
+                        <a
+                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
+                            Learn More →
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="service-box service-icon-right">
+                    <img src="./webapp.jpg" alt="">
+                    <div>
+                        <div class="service-title">Custom Web Applications</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
+
+                        <a
+                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
+                            Learn More →
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="service-box service-icon-left">
+                    <img src="./AI.jpg" alt="">
+                    <div>
+                        <div class="service-title">AI Integration & Automation</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
+
+                        <a
+                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
+                            Learn More →
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="service-box service-icon-right">
+                    <img src="./mobileapp.jpg" alt="">
+                    <div>
+                        <div class="service-title">Mobile App Development</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
+
+                        <a
+                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
+                            Learn More →
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="service-box service-icon-left">
+                    <img src="./wordpress.jpg" alt="">
+                    <div>
+                        <div class="service-title">WordPress Websites</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
+
+                        <a
+                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
+                            Learn More →
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Industries Section -->
+    <section class="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 lg:mb-20">
+                <div
+                    class="inline-flex items-center bg-blue-100 text-blue-600 px-6 py-2.5 rounded-full font-bold mb-6 shadow-sm">
+                    <i class="fas fa-industry mr-2 text-sm"></i>
+                    INDUSTRIES WE SERVE
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
+                    Empowering <span class="text-blue-600">Diverse Sectors</span>
+                </h2>
+                <p class="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
+                    Delivering tailored digital solutions across multiple industries with proven expertise and
+                    cutting-edge technology
+                </p>
+            </div>
+
+            <!-- Industries Grid -->
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-yellow">🏠</div>
+                    <div class="industry-card-title">Real estate</div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-green">🛠️</div>
+                    <div class="industry-card-title">Engineering and construction</div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-pink">🛒</div>
+                    <div class="industry-card-title">Retail</div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-blue">🏭</div>
+                    <div class="industry-card-title">Manufacturing</div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-mint">🚚</div>
+                    <div class="industry-card-title">Logistics and Transportation</div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-red">🛢️</div>
+                    <div class="industry-card-title">Oil and Gas</div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-yellow">♻️</div>
+                    <div class="industry-card-title">Energy and utilities</div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-blue">💼</div>
+                    <div class="industry-card-title">Professional services</div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-green">📡</div>
+                    <div class="industry-card-title">Telecoms</div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-light-yellow">🧳</div>
+                    <div class="industry-card-title">Travel and hospitality</div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-gray-600 text-lg mb-6">Don't see your industry? We adapt our solutions to any sector.</p>
+                <a href="#contact"
+                    class="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
+                    style="background-color: #4169E1;">
+                    <i class="fas fa-comments mr-2"></i>Discuss Your Industry Needs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section id="projects" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-4">
+                    PORTFOLIO
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Featured Projects</h2>
+                <p class="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
+                    Showcasing our expertise through successfully delivered enterprise solutions
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="./crm-section.jpg" alt="CRM System" class="w-full h-96 object-cover">
+                    <div
+                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                        <div
+                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span
+                                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">Enterprise</span>
+                                <span
+                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
+                            </div>
+                            <h3 class="text-white text-3xl font-bold mb-2">Enterprise CRM System</h3>
+                            <p class="text-gray-200 mb-4">Lead management, B2B meetings, analytics dashboard.</p>
+                            <span class="text-blue-400 font-bold">React.js, Node.js, PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="./image-464.26x384.jpg" alt="WordPress Site" class="w-full h-96 object-cover">
+                    <div
+                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                        <div
+                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span
+                                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">WordPress</span>
+                                <span
+                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
+                            </div>
+                            <h3 class="text-white text-3xl font-bold mb-2">Corporate WordPress Website</h3>
+                            <p class="text-gray-200 mb-4">SEO-ready business site with Elementor Pro.</p>
+                            <span class="text-blue-400 font-bold">WordPress, PHP, MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="./Ai-chatbot-sys.jpg" alt="AI Chatbot" class="w-full h-96 object-cover">
+                    <div
+                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                        <div
+                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span
+                                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">AI/ML</span>
+                                <span
+                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
+                            </div>
+                            <h3 class="text-white text-3xl font-bold mb-2">AI Q/A Chatbot System</h3>
+                            <p class="text-gray-200 mb-4">Desktop chatbot using AI integration and NLP.</p>
+                            <span class="text-blue-400 font-bold">Python, OpenRouter, Tkinter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="./EMS-section.jpg" alt="EMS" class="w-full h-96 object-cover">
+                    <div
+                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                        <div
+                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span
+                                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">Enterprise</span>
+                                <span
+                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
+                            </div>
+                            <h3 class="text-white text-3xl font-bold mb-2">Employee Management System</h3>
+                            <p class="text-gray-200 mb-4">Attendance, HR tools, performance analytics.</p>
+                            <span class="text-blue-400 font-bold">React.js, Node.js, PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="./hotelbook.jpg" alt="Hotel Booking" class="w-full h-96 object-cover">
+                    <div
+                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                        <div
+                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">Web
+                                    App</span>
+                                <span
+                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
+                            </div>
+                            <h3 class="text-white text-3xl font-bold mb-2">Hotel Booking Platform</h3>
+                            <p class="text-gray-200 mb-4">Room management, calendar booking, payments.</p>
+                            <span class="text-blue-400 font-bold">React.js, Express.js, MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="./e-commerce.png" alt="E-Commerce" class="w-full h-96 object-cover">
+                    <div
+                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                        <div
+                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span
+                                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">E-Commerce</span>
+                                <span
+                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
+                            </div>
+                            <h3 class="text-white text-3xl font-bold mb-2">E-Commerce Web Application</h3>
+                            <p class="text-gray-200 mb-4">Product catalog, cart, secure checkout.</p>
+                            <span class="text-blue-400 font-bold">React.js, Node.js, PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button
+                    class="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
+                    style="background-color: #4169E1;">
+                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12 relative z-20 stats-custom-margin">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="bg-blue-600 rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10" style="background-color: #001F3F;">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">50+</div>
+                        <div class="text-white font-bold text-lg mb-1">Projects Delivered</div>
+                        <div class="text-blue-100 text-sm">Successfully Completed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">40+</div>
+                        <div class="text-white font-bold text-lg mb-1">Happy Clients</div>
+                        <div class="text-blue-100 text-sm">Worldwide</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">99%</div>
+                        <div class="text-white font-bold text-lg mb-1">Satisfaction Rate</div>
+                        <div class="text-blue-100 text-sm">Client Reviews</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">3+</div>
+                        <div class="text-white font-bold text-lg mb-1">Years Experience</div>
+                        <div class="text-blue-100 text-sm">Industry Expertise</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-24 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="wcu-container-wrapper">
+
+                <!-- pill -->
+                <div class="wcu-pill">WHY CHOOSE US</div>
+
+                <!-- Heading -->
+                <div class="wcu-hero">
+                    <h1>Why <span class="wcu-brand">Nexora</span> is The Right Choice for You</h1>
+                </div>
+
+                <!-- main grid -->
+                <div class="wcu-grid">
+
+                    <!-- LEFT COLUMN -->
+                    <div class="wcu-left-col">
+
+                        <!-- Top-left feature -->
+                        <div class="wcu-feature-card" aria-labelledby="f1-title">
+                            <div class="wcu-icon-wrap" aria-hidden="true">
+                                <!-- icon: user group with stars -->
+                                <svg class="wcu-icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="3" />
+                                    <path d="M4 20c0-3 4-5 8-5s8 2 8 5" />
+                                    <circle cx="6" cy="7" r="1" />
+                                    <circle cx="18" cy="7" r="1" />
+                                </svg>
+                            </div>
+
+                            <div class="wcu-feature-content">
+                                <h3 id="f1-title">Expert Developers</h3>
+                                <p>Work with top industry professionals who bring years of real-world experience,
+                                    providing you with cutting-edge solutions, modern tools, and best practices to
+                                    ensure your project's success.</p>
+                            </div>
+                        </div>
+
+                        <!-- Top-right feature -->
+                        <div class="wcu-feature-card" aria-labelledby="f2-title">
+                            <div class="wcu-icon-wrap" aria-hidden="true">
+                                <!-- icon: rocket -->
+                                <svg class="wcu-icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true">
+                                    <path d="M14 4s-1 1-3 3c-2 2-3 4-3 4s1 1 3 1 4-1 4-1 0-2-1-4 0-3 0-3z" />
+                                    <path d="M7 17c-1 1-4 2-4 2s1-3 2-4" />
+                                </svg>
+                            </div>
+
+                            <div class="wcu-feature-content">
+                                <h3 id="f2-title">Business-Ready Solutions</h3>
+                                <p>Get enterprise-grade software that's production-ready, scalable, and built to
+                                    industry standards, helping you accelerate your business growth and stay
+                                    competitive in the market.</p>
+                            </div>
+                        </div>
+
+                        <!-- Large card spanning below -->
+                        <div class="wcu-feature-large" aria-labelledby="f3-title">
+                            <div class="wcu-icon-wrap" aria-hidden="true" style="align-self:flex-start;">
+                                <!-- icon: target / bullseye -->
+                                <svg class="wcu-icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="12" r="3" />
+                                    <circle cx="12" cy="12" r="6" />
+                                    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <div class="wcu-feature-content">
+                                <h3 id="f3-title">50+ Enterprise Projects Delivered</h3>
+                                <p>Nexora has delivered over 50 successful projects across various industries including
+                                    CRM systems, e-commerce platforms, AI chatbots, and custom web applications. Our
+                                    proven track record demonstrates our commitment to quality, innovation, and client
+                                    satisfaction.</p>
+                            </div>
+                        </div>
+
+                    </div> <!-- END left-col -->
+
+                    <!-- RIGHT COLUMN: promo -->
+                    <aside class="wcu-promo" aria-labelledby="promo-title">
+                        <div>
+                            <div class="wcu-promo-icon" aria-hidden="true">
+                                <!-- promo icon: document outline -->
+                                <svg class="wcu-icon-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true">
+                                    <rect x="5" y="4" width="12" height="16" rx="2" ry="2" />
+                                    <path d="M9 8h6" stroke-linecap="round" />
+                                    <path d="M9 12h6" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <h3 id="promo-title">24/7 Support & Fast Response</h3>
+                            <p>At Nexora, we understand the importance of timely support for your business.
+                                That's why we offer 24-hour response time and dedicated support to keep your projects
+                                running smoothly.<br><br>Whether you need urgent fixes or ongoing maintenance, our team
+                                is always ready to assist you.</p>
+                        </div>
+
+                        <div>
+                            <a class="wcu-cta" href="#contact" aria-label="Start Your Project">
+                                Start Your Project
+                                <!-- arrow -->
+                                <svg width="14" height="14" viewBox="0 0 24 24"
+                                    style="display:inline-block; vertical-align:middle;">
+                                    <path d="M5 12h14M13 6l6 6-6 6" stroke="#00311f" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                </svg>
+                            </a>
+                        </div>
+                    </aside>
+
+                </div> <!-- END grid -->
+
+            </div> <!-- END wcu-container-wrapper -->
+        </div> <!-- END container -->
+    </section>
+
+
+
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-4">
+                    CLIENT REVIEWS
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">What Our Clients Say</h2>
+                <div class="flex justify-center items-center space-x-2 mb-4">
+                    <div class="flex text-yellow-400 text-2xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-gray-700 font-bold text-xl">5.0 out of 5</span>
+                    <span class="text-gray-500">(40+ reviews)</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="testimonial-card rounded-2xl shadow-lg p-8">
+                    <div class="flex text-yellow-400 text-xl mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">
+                        "Nexora delivered a world-class CRM & EMS system with dashboards, B2B meetings, and analytics."
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-white font-bold text-xl"
+                            style="background-color: #4169E1;">
+                            BE
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-800 text-lg">Badar Expo</div>
+                            <div class="text-gray-600">Enterprise Client</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl shadow-lg p-8">
+                    <div class="flex text-yellow-400 text-xl mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">
+                        "Our WordPress website now performs significantly better with Nexora's SEO & mobile-first
+                        design."
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-white font-bold text-xl"
+                            style="background-color: #4169E1;">
+                            DM
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-800 text-lg">Digital Marketing Agency</div>
+                            <div class="text-gray-600">Marketing Firm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl shadow-lg p-8">
+                    <div class="flex text-yellow-400 text-xl mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">
+                        "Outstanding AI chatbot implementation! The Q/A system transformed our customer support
+                        operations."
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-white font-bold text-xl"
+                            style="background-color: #4169E1;">
+                            TS
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-800 text-lg">Tech Startup</div>
+                            <div class="text-gray-600">SaaS Company</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BLOG SECTION START -->
+    <section class="blog-section">
+        <div class="blog-container">
+            <h2 class="blog-title">Our Blogs</h2>
+            <p class="blog-subtitle">Insights, updates, and expert knowledge from Nexora</p>
+
+            <div class="blog-grid">
+
+                <!-- Blog Card 1: Enterprise CRM -->
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="./blog_crm.jpg" alt="Enterprise CRM">
+                    </div>
+                    <h3 class="blog-headline">How Enterprise CRM Transforms Business Efficiency</h3>
+                    <p class="blog-text">
+                        Discover how AI-powered enterprise CRM solutions streamline workflows and boost performance.
+                    </p>
+                    <span class="blog-date">Jul 22, 2024</span>
+                    <a href="./blog-crm.html" class="blog-btn">Read More</a>
+                </div>
+
+                <!-- Blog Card 2: AI Automation -->
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="blog_ai.jpg" alt="AI Automation">
+                    </div>
+                    <h3 class="blog-headline">AI Integration: The Future of Smart Automation</h3>
+                    <p class="blog-text">
+                        Learn how AI automation improves accuracy, reduces manual work, and modernizes operations.
+                    </p>
+                    <span class="blog-date">Aug 10, 2024</span>
+                    <a href="./blog-ai.html" class="blog-btn">Read More</a>
+                </div>
+
+                <!-- Blog Card 3: Web Development -->
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="./blog_web_dev.jpg" alt="Web Development">
+                    </div>
+                    <h3 class="blog-headline">Building Scalable Web Applications in 2025</h3>
+                    <p class="blog-text">
+                        Explore modern frameworks and best practices for developing scalable web applications.
+                    </p>
+                    <span class="blog-date">Sep 02, 2024</span>
+                    <a href="./blog-web-app.html" class="blog-btn">Read More</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- BLOG SECTION END -->
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-6">
+                        ABOUT US
+                    </div>
+                    <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Building Digital Excellence Since
+                        2022</h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Nexora is an international software house specializing in enterprise-grade solutions, AI
+                        integration, and custom web applications. We serve global clients with cutting-edge technology
+                        and exceptional delivery standards.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Our team combines technical expertise with business understanding to deliver solutions that
+                        drive growth, efficiency, and innovation for businesses worldwide.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-8">
+                        <div class="bg-blue-50 rounded-xl p-6">
+                            <div class="text-4xl font-black text-blue-600 mb-2">50+</div>
+                            <div class="text-gray-700 font-semibold">Projects Completed</div>
+                        </div>
+                        <div class="bg-blue-50 rounded-xl p-6">
+                            <div class="text-4xl font-black text-blue-600 mb-2">40+</div>
+                            <div class="text-gray-700 font-semibold">Happy Clients</div>
+                        </div>
+                        <div class="bg-blue-50 rounded-xl p-6">
+                            <div class="text-4xl font-black text-blue-600 mb-2">99%</div>
+                            <div class="text-gray-700 font-semibold">Client Satisfaction</div>
+                        </div>
+                        <div class="bg-blue-50 rounded-xl p-6">
+                            <div class="text-4xl font-black text-blue-600 mb-2">24hr</div>
+                            <div class="text-gray-700 font-semibold">Response Time</div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
+                        style="background-color: #4169E1;">
+                        <i class="fas fa-users mr-2"></i> Meet Our Team
+                    </button>
+                </div>
+
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=600&fit=crop"
+                        alt="Team" class="rounded-2xl shadow-2xl">
+
+                    <div class="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-2xl p-6 hidden lg:block">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-100 rounded-full p-4">
+                                <i class="fas fa-award text-blue-600 text-3xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">Top Rated</div>
+                                <div class="text-gray-600 font-semibold">Software House</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative overflow-hidden" style="background-color: #001F3F;">
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl lg:text-6xl font-black text-white mb-6">Ready to Start Your Project?</h2>
+                <p class="text-blue-100 text-xl max-w-3xl mx-auto leading-relaxed">
+                    Let's discuss your requirements and build something amazing together
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <div class="bg-white rounded-3xl shadow-2xl p-10">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                            <input type="text" name="fullName" id="fullName"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
+                                placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                            <input type="email" name="email" id="email"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
+                                placeholder="john@example.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Project Budget</label>
+                            <select name="budget" id="budget"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
+                                required>
+                                <option value="">Select Budget Range</option>
+                                <option>$1,000 - $5,000</option>
+                                <option>$5,000 - $10,000</option>
+                                <option>$10,000 - $25,000</option>
+                                <option>$25,000+</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Project Details</label>
+                            <textarea name="details" id="details" rows="4"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
+                                placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
+                            style="background-color: #4169E1;">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="text-white">
+                    <h3 class="text-3xl font-bold mb-8">Get in Touch</h3>
+
+                    <div class="space-y-6 mb-12">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                                <i class="fas fa-envelope text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-lg mb-1">Email Us</div>
+                                <div class="text-blue-100">info@nexora.com</div>
+                                <div class="text-blue-100">support@nexora.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                                <i class="fas fa-phone-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-lg mb-1">Call Us</div>
+                                <div class="text-blue-100">+92 300 1234567</div>
+                                <div class="text-blue-100">Mon-Fri: 9am - 6pm PST</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-lg mb-1">Visit Us</div>
+                                <div class="text-blue-100">Karachi, Sindh</div>
+                                <div class="text-blue-100">Pakistan</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="font-bold text-lg mb-4">Follow Us</div>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
+                                <i class="fab fa-linkedin-in text-2xl"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-blue-600 p-3 rounded-xl" style="background-color: #4169E1;">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Nex<span class="text-blue-500">ora</span></span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        International software house delivering enterprise solutions worldwide.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:text-blue-500 transition">Web Development</a></li>
+                        <li><a href="#services" class="hover:text-blue-500 transition">Mobile Apps</a></li>
+                        <li><a href="#services" class="hover:text-blue-500 transition">AI Integration</a></li>
+                        <li><a href="#services" class="hover:text-blue-500 transition">Enterprise CRM</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-blue-500 transition">About Us</a></li>
+                        <li><a href="#projects" class="hover:text-blue-500 transition">Portfolio</a></li>
+                        <li><a href="#testimonials" class="hover:text-blue-500 transition">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-blue-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Connect</h4>
+                    <div class="flex space-x-3 mb-4">
+                        <a href="#" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        <i class="fas fa-envelope mr-2"></i>info@nexora.com
+                    </p>
+                    <p class="text-gray-400 text-sm mt-2">
+                        <i class="fas fa-phone mr-2"></i>+92 300 1234567
+                    </p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2024 Nexora. All rights reserved. Built with excellence.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menuIcon = document.getElementById('mobile-menu-icon');
+
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.classList.toggle('active');
+
+            // Toggle icon between bars and X
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+        }
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                }
+            });
+        });
+
+        // Contact Form Validation and Submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get form values
+                const fullName = document.getElementById('fullName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const budget = document.getElementById('budget').value;
+                const details = document.getElementById('details').value.trim();
+
+                // Validation
+                if (!fullName || !email || !budget || !details) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+
+                // Success message (in production, this would send to backend)
+                alert(`Thank you, ${fullName}! Your message has been received. We'll contact you at ${email} within 24 hours.`);
+
+                // Reset form
+                contactForm.reset();
+            });
+        }
+
+        // Navbar Scroll Effect
+        let lastScroll = 0;
+        const navbar = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // CTA Button Click Handlers
+        document.querySelectorAll('button').forEach(button => {
+            const buttonText = button.textContent.toLowerCase();
+
+            if (buttonText.includes('start') || buttonText.includes('project')) {
+                button.addEventListener('click', function (e) {
+                    if (this.type !== 'submit') {
+                        e.preventDefault();
+                        document.querySelector('#contact').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+
+            if (buttonText.includes('schedule') || buttonText.includes('call')) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    alert('To schedule a call, please email us at info@nexora.com or call +92 300 1234567');
+                });
+            }
+
+            if (buttonText.includes('meet') && buttonText.includes('team')) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    alert('Want to meet our team? Contact us at info@nexora.com to schedule a meeting!');
+                });
+            }
+        });
+
+        // Add animation on scroll for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.card-hover, .project-card, .testimonial-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // <!-- MOBILE MENU SCRIPT --> 
+
+        function toggleMobileDropdown() {
+            const box = document.getElementById("mobileDropdown");
+            const arrow = document.getElementById("mobileArrow");
+
+            box.classList.toggle("hidden");
+            arrow.classList.toggle("rotate-90");
+        }
+
+
+        // ===== JS END =====
+
+
+    </script>
+</body>
+
+</html>
