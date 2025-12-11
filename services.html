@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Nexora Technologies</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Footer responsive */
+        @media (max-width: 640px) {
+            footer .grid {
+                gap: 2rem !important;
+            }
+
+            footer h4 {
+                font-size: 1rem !important;
+            }
+        }
+
+        /* Mobile Menu Compact Styling */
+        #mobile-menu {
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smooth scrollbar for mobile menu */
+        #mobile-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-thumb {
+            background: #4169E1;
+            border-radius: 10px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-thumb:hover {
+            background: #2d4fb3;
+        }
+
+        /* Mobile menu button active state with blue glow */
+        .mobile-menu-btn {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active {
+            color: #4169E1 !important;
+            background: rgba(65, 105, 225, 0.1);
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.2);
+        }
+
+        .mobile-menu-btn:active {
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.3), 0 0 15px rgba(65, 105, 225, 0.4);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 8px 12px;
+            color: #4B5563;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background: #f1f5f9;
+            color: #4169E1;
+        }
+
+        .mobile-link {
+            display: block;
+            padding: 12px 0;
+            font-weight: 600;
+            color: #4B5563;
+        }
+
+        .mobile-sublink {
+            color: #4B5563;
+            font-size: 15px;
+            padding: 5px 0;
+        }
+
+        .pulse-glow {
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 4px #4169E1;
+            }
+
+            to {
+                box-shadow: 0 0 15px #4169E1;
+            }
+        }
+
+        .rotate-90 {
+            transform: rotate(90deg);
+        }
+
+        /* Mobile Menu Compact Styling */
+        #mobile-menu {
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smooth scrollbar for mobile menu */
+        #mobile-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-thumb {
+            background: #4169E1;
+            border-radius: 10px;
+        }
+
+        #mobile-menu::-webkit-scrollbar-thumb:hover {
+            background: #2d4fb3;
+        }
+
+        /* Mobile menu button active state with blue glow */
+        .mobile-menu-btn {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active {
+            color: #4169E1 !important;
+            background: rgba(65, 105, 225, 0.1);
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.2);
+        }
+
+        .mobile-menu-btn:active {
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.3), 0 0 15px rgba(65, 105, 225, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <div class="bg-blue-600 text-white py-2 text-sm" style="background-color: #4169E1;">
+        <div class="container mx-auto px-4 lg:px-8 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center flex-wrap gap-3 sm:gap-6">
+                <span class="flex items-center text-xs sm:text-sm"><i class="fas fa-envelope mr-2"></i>
+                    info@nexora.com</span>
+                <span class="flex items-center text-xs sm:text-sm top-bar-hide-mobile"><i
+                        class="fas fa-map-marker-alt mr-2"></i> Karachi, Pakistan</span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-4">
+                <span class="hidden sm:flex items-center text-xs sm:text-sm"><i class="fas fa-clock mr-2"></i> Open for
+                    New Projects</span>
+                <div class="flex gap-2 sm:gap-3">
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-github"></i></a>
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= NAVBAR ========================= -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- LOGO -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-blue-600 p-3 rounded-xl shadow-lg pulse-glow" style="background-color: #4169E1;">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-gray-800">Nex<span class="text-blue-600">ora</span></span>
+                        <p class="text-xs text-gray-500 font-semibold">International Software House</p>
+                    </div>
+                </div>
+
+                <!-- DESKTOP MENU -->
+                <div class="hidden lg:flex items-center space-x-8">
+
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-semibold transition">Home</a>
+
+                    <!-- ========================= DESKTOP SERVICES DROPDOWN ========================= -->
+                    <div class="relative group">
+                        <a href="./services.html"
+                            class="text-gray-700 hover:text-blue-600 font-semibold transition flex items-center gap-1">
+                            Services
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </a>
+
+                        <!-- Desktop Dropdown Box -->
+                        <div
+                            class="absolute left-0 mt-3 w-72 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+
+                            <div class="flex flex-col gap-2">
+
+                                <a href="./ERP-Enterprices.html" class="dropdown-item">Enterprise Applications</a>
+                                <a href="./Enterprise-CRM-Development.html" class="dropdown-item">Enterprise CRM Development</a>
+                                <a href="./Custome-Web-Application.html" class="dropdown-item">Custom Web Applications</a>
+                                <a href="./mobapp-development.html" class="dropdown-item">Mobile Application Development</a>
+                                <a href="./UI-UX.html" class="dropdown-item">UI UX</a>
+                                <a href="./AI-Integration-Automation.html" class="dropdown-item">AI Integration & Automation</a>
+                                <a href="./WordPress-Websites.html" class="dropdown-item">WordPress Websites</a>
+                                <a href="./Tech-Consultancy.html" class="dropdown-item">Tech Consultancy</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ========================= DROPDOWN END ========================= -->
+
+                    <a href="industries.html"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">Industries</a>
+                    <a href="index.html#projects"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">Portfolio</a>
+                    <a href="index.html#testimonials"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">Reviews</a>
+                    <a href="index.html#about"
+                        class="text-gray-700 hover:text-blue-600 font-semibold transition">About</a>
+                    <a href="blogs.html" class="text-gray-700 hover:text-blue-600 font-semibold transition">Blogs</a>
+
+                    <a href="index.html#contact"
+                        class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition"
+                        style="background-color: #4169E1;">
+                        Start Project
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="mobile-menu-btn" onclick="toggleMenu()"
+                    class="mobile-menu-btn lg:hidden text-gray-700 text-2xl">
+                    <i id="mobile-menu-icon" class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- ========================= MOBILE MENU ========================= -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-4">
+
+                <a href="index.html" class="mobile-link">Home</a>
+
+                <!-- MOBILE SERVICES DROPDOWN WITH ARROW -->
+                <!-- MOBILE DROPDOWN -->
+                <div class="py-3 border-b border-gray-200">
+
+                    <!-- TOP ROW (Services + Arrow) -->
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleMobileDropdown()">
+
+                        <a href="./services.html" class="text-gray-700 font-semibold block">
+                            Services
+                        </a>
+
+                        <i id="mobileArrow" class="fas fa-chevron-right text-gray-700 text-sm transition-transform"></i>
+                    </div>
+
+                    <!-- DROPDOWN CONTENT -->
+                    <div id="mobileDropdown" class="mt-3 ml-4 hidden flex-col space-y-2">
+
+                        <a href="./ERP-Enterprices.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Enterprise Applications
+                        </a>
+
+                        <a href="./Enterprise-CRM-Development.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Enterprise CRM Development
+                        </a>
+
+                        <a href="./Custome-Web-Application.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Custom Web Applications
+                        </a>
+
+                        <a href="./mobapp-development.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Mobile Application Development
+                        </a>
+
+                        <a href="UI-UX.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            UI UX
+                        </a>
+
+                        <a href="AI-Integration-Automation.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            AI Integration & Automation
+                        </a>
+
+                        <a href="WordPress-Websites.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            WordPress Websites
+                        </a>
+
+                        <a href="Tech-Consultancy.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            Tech Consultancy
+                        </a>
+                    </div>
+                </div>
+                <!-- MOBILE DROPDOWN END -->
+
+                <a href="industries.html" class="mobile-link">Industries</a>
+                <a href="index.html#projects" class="mobile-link">Portfolio</a>
+                <a href="index.html#testimonials" class="mobile-link">Reviews</a>
+                <a href="index.html#about" class="mobile-link">About</a>
+                <a href="blogs.html" class="mobile-link">Blogs</a>
+
+                <a href="index.html#contact"
+                    class="block mt-4 bg-blue-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition"
+                    style="background-color: #4169E1;">
+                    Start Project
+                </a>
+            </div>
+            <!-- ========================= MOBILE MENU END ========================= -->
+
+        </div>
+    </nav>
+
+    <!-- ======================================================
+                     PAGE HEADER
+    ======================================================= -->
+    <section class="w-full relative py-24 text-center text-white overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="./servic-cover.jpg" alt="Services Header" class="w-full h-full object-cover">
+            <!-- Dark Overlay for better text visibility -->
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto px-4">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-3 tracking-tight">Services</h1>
+            <p
+                class="text-lg sm:text-xl text-gray-200 font-medium bg-white/10 inline-block px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">
+                <a href="index.html">Home</a> <span class="mx-2 text-blue-400">></span> <a
+                    href="services.html">Services</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- ======================================================
+                   SERVICES SECTION
+    ======================================================= -->
+    <section class="w-11/12 max-w-6xl mx-auto py-16">
+
+        <!-- Block 1 -->
+        <div
+            class="flex flex-col lg:flex-row items-center bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-md mb-8 sm:mb-12 gap-6 lg:gap-10">
+            <div
+                class="bg-gray-300 rounded-xl h-64 sm:h-72 lg:h-80 w-full lg:w-1/2 flex items-center justify-center text-gray-600 overflow-hidden shadow-inner">
+                <img src="./1st-service.jpg" alt="Customized Solutions"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <h3 class="text-sm uppercase tracking-wide text-blue-500 mb-1">User Centric Development Solutions</h3>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Customized Solutions</h2>
+                <p class="text-gray-700 mb-4">Our customers and industry need more than just out-of-the-box software
+                    systems...</p>
+                <a href="./software-development.html"
+                    class="relative px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold transition
+                      after:content after:absolute after:-inset-0.5 after:rounded-xl after:shadow-2xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                    Build custom software
+                </a>
+            </div>
+        </div>
+
+        <!-- Block 2 -->
+        <div
+            class="flex flex-col lg:flex-row-reverse items-center bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-md mb-8 sm:mb-12 gap-6 lg:gap-10">
+            <div
+                class="bg-gray-300 rounded-xl h-64 sm:h-72 lg:h-80 w-full lg:w-1/2 flex items-center justify-center text-gray-600 overflow-hidden shadow-inner">
+                <img src="2nd-servic.jpg" alt="Integrated Business Solutions"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <h3 class="text-sm uppercase tracking-wide text-blue-500 mb-1">Seamless Integration Solution</h3>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Integrated Business Solutions</h2>
+                <p class="text-gray-700 mb-4">We offer complete integration solutions with ERP systems including
+                    Dynamics, SAP, Oracle...</p>
+                <a href="./IBS.html"
+                    class="relative px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold transition
+                      after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl after:shadow-2xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                    Get Integrated Business App
+                </a>
+            </div>
+        </div>
+
+        <!-- Block 3 -->
+        <div
+            class="flex flex-col lg:flex-row items-center bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-md mb-8 sm:mb-12 gap-6 lg:gap-10">
+            <div
+                class="bg-gray-300 rounded-xl h-64 sm:h-72 lg:h-80 w-full lg:w-1/2 flex items-center justify-center text-gray-600 overflow-hidden shadow-inner">
+                <img src="3rd-serv.jpg" alt="Integrated Business Solutions"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <h3 class="text-sm uppercase tracking-wide text-blue-500 mb-1">Ensuring Excellence With Innovation</h3>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Product Design & Development</h2>
+                <p class="text-gray-700 mb-4">We specialize in complete product development — design, engineering, QA...
+                </p>
+                <a href="./prd-dev.html"
+                    class="relative px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold transition
+                      after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl after:shadow-2xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                    Discuss your product design
+                </a>
+            </div>
+        </div>
+
+        <!-- Block 4 -->
+        <div
+            class="flex flex-col lg:flex-row-reverse items-center bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-md mb-8 sm:mb-12 gap-6 lg:gap-10">
+            <div
+                class="bg-gray-300 rounded-xl h-64 sm:h-72 lg:h-80 w-full lg:w-1/2 flex items-center justify-center text-gray-600 overflow-hidden shadow-inner">
+                <img src="mobdev-serv.jpg" alt="Integrated Business Solutions"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <h3 class="text-sm uppercase tracking-wide text-blue-500 mb-1">Building Smarter Applications For Smart
+                    Users</h3>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Mobile Application Development</h2>
+                <p class="text-gray-700 mb-4">We build dynamic, secure and performance-driven applications...</p>
+                <a href="./mobapp-dev.html"
+                    class="relative px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold transition
+                      after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl after:shadow-2xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                    Hire mobile app developers
+                </a>
+            </div>
+        </div>
+
+        <!-- Block 5 -->
+        <div
+            class="flex flex-col lg:flex-row items-center bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-md mb-8 sm:mb-12 gap-6 lg:gap-10">
+            <div
+                class="bg-gray-300 rounded-xl h-64 sm:h-72 lg:h-80 w-full lg:w-1/2 flex items-center justify-center text-gray-600 overflow-hidden shadow-inner">
+                <img src="appdev-serv.jpg" alt="Integrated Business Solutions"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <h3 class="text-sm uppercase tracking-wide text-blue-500 mb-1">Building Your Success On The Web</h3>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Web Application Development</h2>
+                <p class="text-gray-700 mb-4">From eCommerce to enterprise portals, we create modern, scalable apps...
+                </p>
+                <a
+                    class="relative px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold transition
+                      after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl after:shadow-2xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                    Discuss your project
+                </a>
+            </div>
+        </div>
+
+        <!-- Block 6 -->
+        <div
+            class="flex flex-col lg:flex-row-reverse items-center bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-md mb-8 sm:mb-12 gap-6 lg:gap-10">
+            <div
+                class="bg-gray-300 rounded-xl h-64 sm:h-72 lg:h-80 w-full lg:w-1/2 flex items-center justify-center text-gray-600 overflow-hidden shadow-inner">
+                <img src="5th-serv.jpg" alt="Integrated Business Solutions"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <h3 class="text-sm uppercase tracking-wide text-blue-500 mb-1">Lessen Human Error & Enhance Workflows
+                </h3>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Business Process Automation</h2>
+                <p class="text-gray-700 mb-4">We analyze and automate business processes using consultative
+                    procedures...</p>
+                <a
+                    class="relative px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold transition
+                      after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl after:shadow-2xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                    Automate business workflow
+                </a>
+            </div>
+        </div>
+
+        <!-- Block 7 -->
+        <div
+            class="flex flex-col lg:flex-row items-center bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-md mb-8 sm:mb-12 gap-6 lg:gap-10">
+            <div
+                class="bg-gray-300 rounded-xl h-64 sm:h-72 lg:h-80 w-full lg:w-1/2 flex items-center justify-center text-gray-600 overflow-hidden shadow-inner">
+                <img src="tech-serv.jpg" alt="Integrated Business Solutions"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <h3 class="text-sm uppercase tracking-wide text-blue-500 mb-1">Consulting & Supporting Your Ideas</h3>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Tech Consultancy</h2>
+                <p class="text-gray-700 mb-4">We provide expert IT consulting to help companies leverage technology...
+                </p>
+                <a
+                    class="relative px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold transition
+                      after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl after:shadow-2xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                    Connect with IT consultancy
+                </a>
+            </div>
+        </div>
+
+        <!-- Block 8 -->
+        <div
+            class="flex flex-col lg:flex-row-reverse items-center bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-md mb-8 sm:mb-12 gap-6 lg:gap-10">
+            <div
+                class="bg-gray-300 rounded-xl h-64 sm:h-72 lg:h-80 w-full lg:w-1/2 flex items-center justify-center text-gray-600 overflow-hidden shadow-inner">
+                <img src="partner-serv.jpg" alt="Integrated Business Solutions"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <h3 class="text-sm uppercase tracking-wide text-blue-500 mb-1">Not Just Vendors Your Partners</h3>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Tech Partnership</h2>
+                <p class="text-gray-700 mb-4">We form long-term technology partnerships for joint ventures and
+                    alliances...</p>
+                <a
+                    class="relative px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold transition
+                      after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl after:shadow-2xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                    Connect with us
+                </a>
+            </div>
+        </div>
+
+        <!-- Block 9 -->
+        <div
+            class="flex flex-col lg:flex-row items-center bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-md mb-8 sm:mb-12 gap-6 lg:gap-10">
+            <div
+                class="bg-gray-300 rounded-xl h-64 sm:h-72 lg:h-80 w-full lg:w-1/2 flex items-center justify-center text-gray-600 overflow-hidden shadow-inner">
+                <img src="erp-serv.jpg" alt="Integrated Business Solutions"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <h3 class="text-sm uppercase tracking-wide text-blue-500 mb-1">Efficiency Throughout The Way</h3>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Enterprise Applications</h2>
+                <p class="text-gray-700 mb-4">Enterprise-grade applications that support business operations...</p>
+                <a
+                    class="relative px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold transition
+                      after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl after:shadow-2xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                    Get your ERP solution
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+                           CTA SECTION
+    ======================================================= -->
+    <section class="w-full flex justify-center my-12 lg:my-20">
+        <div
+            class="bg-gradient-to-br from-[#1b2141] to-[#0e1224] text-white p-6 sm:p-8 lg:p-10 rounded-3xl w-11/12 max-w-3xl text-center shadow-xl">
+            <h2 class="text-2xl font-semibold mb-2">Ready to Join Nexora Technologies?</h2>
+            <p class="opacity-80 mb-6">Don’t miss your chance to be part of the future.</p>
+
+            <a
+                class="relative px-6 py-3 rounded-xl bg-[#4169E1] hover:bg-[#27408B] text-white font-semibold transition
+                  after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl after:shadow-[0_0_20px_rgba(255,255,255,0.4)] after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                Back This Project Now
+            </a>
+        </div>
+    </section>
+
+
+    <!-- ======================================================
+                            FOOTER
+    ======================================================= -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="p-3 rounded-xl bg-blue-600">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Nex<span class="text-blue-500">ora</span></span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        International software house delivering enterprise solutions worldwide.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-500 transition">Web Development</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">AI Integration</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Enterprise CRM</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-500 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Testimonials</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Connect</h4>
+                    <div class="flex space-x-3 mb-4">
+                        <a href="#" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        <i class="fas fa-envelope mr-2"></i>info@nexora.com
+                    </p>
+                    <p class="text-gray-400 text-sm mt-2">
+                        <i class="fas fa-phone mr-2"></i>+92 300 1234567
+                    </p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Nexora. All rights reserved.Built with
+                        excellence.</p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menuIcon = document.getElementById('mobile-menu-icon');
+
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.classList.toggle('active');
+
+            // Toggle icon between bars and X
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+        }
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                }
+            });
+        });
+        // Navbar Scroll Effect
+        let lastScroll = 0;
+        const navbar = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+
+            lastScroll = currentScroll;
+        });
+        // <!-- MOBILE MENU SCRIPT --> 
+
+        function toggleMobileDropdown() {
+            const box = document.getElementById("mobileDropdown");
+            const arrow = document.getElementById("mobileArrow");
+
+            box.classList.toggle("hidden");
+            arrow.classList.toggle("rotate-90");
+        }
+
+    </script>
+</body>
+
+</html>
