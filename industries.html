@@ -18,18 +18,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* Footer responsive */
-        @media (max-width: 640px) {
-            footer .grid {
-                gap: 2rem !important;
-            }
-
-            footer h4 {
-                font-size: 1rem !important;
-            }
-        }
-
-
         * {
             margin: 0;
             padding: 0;
@@ -59,77 +47,6 @@
             }
         }
 
-
-        /* INDUSTRY CARDS */
-        .container-custom {
-            width: 90%;
-            max-width: 1250px;
-            margin: 50px auto;
-        }
-
-        .card {
-            background: white;
-            border-radius: 14px;
-            padding: 20px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: .3s;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .card img {
-            width: 160px;
-            height: 120px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        .card h3 {
-            font-size: 22px;
-            color: #0d1b48;
-            margin-bottom: 6px;
-        }
-
-        .card p {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 12px;
-        }
-
-        .card .btn {
-            padding: 10px 18px;
-            background: #4169E1;
-            color: white;
-            border-radius: 6px;
-            font-size: 14px;
-            transition: .3s;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .card .btn:hover {
-            background: #204de0;
-        }
-
-        /* Responsive Cards */
-        @media (max-width:768px) {
-            .card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .card img {
-                width: 100%;
-                height: 180px;
-            }
-        }
 
         /* Mobile Menu Compact Styling */
         #mobile-menu {
@@ -267,6 +184,382 @@
         .mobile-menu-btn:active {
             box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.3), 0 0 15px rgba(65, 105, 225, 0.4);
         }
+
+        /* Animation */
+        .industry-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp .6s ease forwards;
+
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .industry-card:hover .img-box img {
+            transform: scale(1.08);
+            filter: brightness(0.9);
+        }
+
+        .img-box img {
+            transition: .4s ease;
+        }
+
+        .badge {
+            transition: .35s ease;
+        }
+
+
+        .industry-card:hover .badge {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .Main-Box {
+            padding-bottom: 55px;
+            /* gap: 50px !important; */
+        }
+
+        /* Footer responsive */
+        @media (max-width: 640px) {
+            footer .grid {
+                gap: 2rem !important;
+            }
+
+            footer h4 {
+                font-size: 1rem !important;
+            }
+        }
+
+        /* ============ MODAL STYLES ============ */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 0;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow: hidden;
+            animation: slideUp 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            max-height: calc(90vh - 120px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .service-item {
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateX(10px);
+            background-color: #eff6ff;
+        }
+
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #2563eb;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #1d4ed8;
+        }
+
+        /* ============ RESPONSIVE OPTIMIZATIONS ============ */
+
+        /* Base responsive containers */
+        .container {
+            width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Extra Small Devices (phones, less than 576px) */
+        @media (max-width: 575px) {
+
+            /* Hero Section */
+            .hero-title {
+                font-size: 1.75rem !important;
+                line-height: 2.25rem !important;
+            }
+
+            .hero-subtitle {
+                font-size: 0.875rem !important;
+            }
+
+            /* Industry Cards */
+            .industry-card {
+                margin-bottom: 1rem;
+            }
+
+            .industry-card h3 {
+                font-size: 1rem !important;
+            }
+
+            .industry-card p {
+                font-size: 0.813rem !important;
+            }
+
+            /* Modal Mobile Optimization */
+            .modal-content {
+                width: 95%;
+                max-height: 85vh;
+                margin: 1rem;
+                border-radius: 16px;
+            }
+
+            .modal-content .p-8 {
+                padding: 1.25rem !important;
+            }
+
+            .modal-content .p-6 {
+                padding: 1rem !important;
+            }
+
+            .modal-content h2 {
+                font-size: 1.5rem !important;
+            }
+
+            .modal-content h3 {
+                font-size: 1.125rem !important;
+            }
+
+            .modal-content h4 {
+                font-size: 0.938rem !important;
+            }
+
+            .modal-content .text-sm {
+                font-size: 0.813rem !important;
+            }
+
+            /* Button touch targets */
+            button,
+            .btn,
+            a.btn {
+                min-height: 44px;
+                padding: 0.625rem 1rem;
+            }
+
+            /* Industry card button spacing on mobile */
+            .industry-card .mt-auto {
+                margin-top: 1rem !important;
+            }
+
+            .industry-card button {
+                font-size: 0.75rem !important;
+                padding: 0.625rem 1rem !important;
+                min-height: auto !important;
+            }
+
+            /* Navbar mobile */
+            nav .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+        }
+
+        /* Small Devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) and (max-width: 767px) {
+            .hero-title {
+                font-size: 2.25rem !important;
+            }
+
+            .modal-content {
+                width: 92%;
+            }
+
+            .industry-card h3 {
+                font-size: 1.125rem !important;
+            }
+        }
+
+        /* Medium Devices (tablets, 768px and up) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .container {
+                max-width: 720px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-title {
+                font-size: 2.5rem !important;
+            }
+
+            .modal-content {
+                width: 85%;
+                max-width: 700px;
+            }
+
+            .modal-content .grid-cols-1.lg\:grid-cols-2 {
+                grid-template-columns: repeat(1, 1fr) !important;
+            }
+        }
+
+        /* Large Devices (desktops, 1024px and up) */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            .container {
+                max-width: 960px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .modal-content {
+                width: 80%;
+                max-width: 850px;
+            }
+        }
+
+        /* Extra Large Devices (large desktops, 1280px and up) */
+        @media (min-width: 1280px) and (max-width: 1535px) {
+            .container {
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* 2XL Devices (larger desktops, 1536px and up) */
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-title {
+                font-size: 4rem !important;
+            }
+        }
+
+        /* Ultra-wide screens (1920px and up) */
+        @media (min-width: 1920px) {
+            .container {
+                max-width: 1600px;
+            }
+        }
+
+        /* Height-specific optimizations */
+        @media (max-height: 700px) {
+            .modal-content {
+                max-height: 80vh;
+            }
+
+            .hero-section {
+                min-height: 60vh !important;
+            }
+        }
+
+        /* Landscape orientation on mobile */
+        @media (max-width: 767px) and (orientation: landscape) {
+            .hero-section {
+                min-height: 80vh !important;
+            }
+
+            .modal-content {
+                max-height: 75vh;
+            }
+
+            #mobile-menu {
+                max-height: 60vh;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+
+            .modal,
+            nav,
+            footer,
+            button {
+                display: none !important;
+            }
+
+            .industry-card {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Ensure images never overflow */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Prevent text overflow */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Smooth transitions for responsive changes */
+        .container,
+        .grid,
+        .modal-content {
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 
@@ -326,18 +619,18 @@
 
                             <div class="flex flex-col gap-2">
 
-                                <a href="./software-development.html" class="dropdown-item">Customized Solutions</a>
-                                <a href="./IBS.html" class="dropdown-item">Integrated Business
-                                    Solutions</a>
-                                <a href="./prd-dev.html" class="dropdown-item">Product Design &
+                                <a href="./ERP-Enterprices.html" class="dropdown-item">Enterprise Applications</a>
+                                <a href="./Enterprise-CRM-Development.html" class="dropdown-item">Enterprise CRM
                                     Development</a>
-                                <a href="./mobapp-dev.html" class="dropdown-item">Mobile Application
+                                <a href="./Custome-Web-Application.html" class="dropdown-item">Custom Web
+                                    Applications</a>
+                                <a href="./mobapp-development.html" class="dropdown-item">Mobile Application
                                     Development</a>
-                                <a href="#" class="dropdown-item">Web Application Development</a>
-                                <a href="#" class="dropdown-item">Business Process Automation</a>
-                                <a href="#" class="dropdown-item">Tech Consultancy</a>
-                                <a href="#" class="dropdown-item">Tech Partnership</a>
-                                <a href="#" class="dropdown-item">Enterprise Applications</a>
+                                <a href="./UI-UX.html" class="dropdown-item">UI UX</a>
+                                <a href="./AI-Integration-Automation.html" class="dropdown-item">AI Integration &
+                                    Automation</a>
+                                <a href="./WordPress-Websites.html" class="dropdown-item">WordPress Websites</a>
+                                <a href="./Tech-Consultancy.html" class="dropdown-item">Tech Consultancy</a>
 
                             </div>
                         </div>
@@ -390,49 +683,44 @@
                     <!-- DROPDOWN CONTENT -->
                     <div id="mobileDropdown" class="mt-3 ml-4 hidden flex-col space-y-2">
 
-                        <a href="./software-development.html"
+                        <a href="./ERP-Enterprices.html"
                             class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
-                            Customized Solutions
+                            Enterprise Applications
                         </a>
 
-                        <a href="./IBS.html"
+                        <a href="./Enterprise-CRM-Development.html"
                             class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
-                            Integrated Business Solutions
+                            Enterprise CRM Development
                         </a>
 
-                        <a href="./prd-dev.html"
+                        <a href="./Custome-Web-Application.html"
                             class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
-                            Product Design & Development
+                            Custom Web Applications
                         </a>
 
-                        <a href="./mobapp-dev.html"
+                        <a href="./mobapp-development.html"
                             class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
                             Mobile Application Development
                         </a>
 
-                        <a href="services-web-apps.html"
+                        <a href="UI-UX.html"
                             class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
-                            Web Application Development
+                            UI UX
                         </a>
 
-                        <a href="services-automation.html"
+                        <a href="AI-Integration-Automation.html"
                             class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
-                            Business Process Automation
+                            AI Integration & Automation
                         </a>
 
-                        <a href="services-consultancy.html"
+                        <a href="WordPress-Websites.html"
+                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
+                            WordPress Websites
+                        </a>
+
+                        <a href="Tech-Consultancy.html"
                             class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
                             Tech Consultancy
-                        </a>
-
-                        <a href="services-partnership.html"
-                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
-                            Tech Partnership
-                        </a>
-
-                        <a href="services-enterprise.html"
-                            class="block text-gray-700 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition">
-                            Enterprise Applications
                         </a>
                     </div>
                 </div>
@@ -477,102 +765,225 @@
     </section>
 
 
+
+
     <!-- INDUSTRY CARDS -->
-    <div class="container-custom">
+    <div class="Main-Box max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600" alt="Real Estate">
-            <div>
-                <h3 class="text-2xl font-semibold">Real Estate</h3>
-                <p>Smart property management, automation & AI-powered lead tracking.</p>
-                <a class="btn  hover:shadow-xl transform hover:scale-105 transition" href="#">Explore Solutions</a>
+            <!-- LOOP START (10 CARDS) -->
+            <!-- CARD TEMPLATE -->
+            <!-- I will generate 10 cards below -->
+
+            <!-- CARD 1 -->
+            <div class="industry-card bg-white rounded-xl shadow p-4 flex flex-col">
+                <div class="img-box relative rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600"
+                        class="w-full h-48 object-cover">
+                    <span class="badge absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full opacity-0"><i
+                            class="fas fa-building"></i></span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold">Real Estate</h3>
+                <p class="text-gray-600 text-sm mt-2 flex-grow">Smart property management, automation & AI-powered
+                    tools.</p>
+
+                <div class="mt-auto flex justify-end">
+                    <button onclick="openModal('realestate')"
+                        class="relative px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition
+                        after:content after:absolute after:-inset-0.5 after:rounded-lg after:shadow-xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                        Explore Solutions
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1581091870627-3f9f67df118b?w=600"
-                alt="Engineering & Construction">
-            <div>
-                <h3 class="text-2xl font-semibold">Engineering & Construction</h3>
-                <p>Project scheduling, field automation & progress tracking tools.</p>
-                <a class="btn hover:shadow-xl transform hover:scale-105 transition" href="#">Learn More</a>
+            <!-- CARD 2 -->
+            <div class="industry-card bg-white rounded-xl shadow p-4 flex flex-col">
+                <div class="img-box relative rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581091870627-3f9f67df118b?w=600"
+                        class="w-full h-48 object-cover">
+                    <span class="badge absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full opacity-0"><i
+                            class="fas fa-tools"></i></span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold">Engineering & Construction</h3>
+                <p class="text-gray-600 text-sm mt-2 flex-grow">Project scheduling, field automation & progress
+                    tracking.</p>
+                <div class="mt-auto flex justify-end">
+                    <button onclick="openModal('construction')"
+                        class="relative px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition
+                        after:content after:absolute after:-inset-0.5 after:rounded-lg after:shadow-xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                        Explore Solutions
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1556742521-b5c6e180d34f?w=600" alt="Retail">
-            <div>
-                <h3 class="text-2xl font-semibold">Retail</h3>
-                <p>Smart POS, inventory automation & customer analytics.</p>
-                <a class="btn hover:shadow-xl transform hover:scale-105 transition" href="#">See Solutions</a>
+            <!-- CARD 3 -->
+            <div class="industry-card bg-white rounded-xl shadow p-4 flex flex-col">
+                <div class="img-box relative rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1556742521-b5c6e180d34f?w=600"
+                        class="w-full h-48 object-cover">
+                    <span class="badge absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full opacity-0"><i
+                            class="fas fa-store"></i></span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold">Retail</h3>
+                <p class="text-gray-600 text-sm mt-2 flex-grow">Smart POS, inventory automation & customer analytics.
+                </p>
+                <div class="mt-auto flex justify-end">
+                    <button onclick="openModal('retail')"
+                        class="relative px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition
+                        after:content after:absolute after:-inset-0.5 after:rounded-lg after:shadow-xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                        Explore Solutions
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1581093588401-22f6363e5673?w=600" alt="Manufacturing">
-            <div>
-                <h3 class="text-2xl font-semibold">Manufacturing</h3>
-                <p>Automation, predictive maintenance & production intelligence.</p>
-                <a class="btn hover:shadow-xl transform hover:scale-105 transition" href="#">Explore</a>
+            <!-- CARD 4 -->
+            <div class="industry-card bg-white rounded-xl shadow p-4 flex flex-col">
+                <div class="img-box relative rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581093588401-22f6363e5673?w=600"
+                        class="w-full h-48 object-cover">
+                    <span class="badge absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full opacity-0"><i
+                            class="fas fa-industry"></i></span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold">Manufacturing</h3>
+                <p class="text-gray-600 text-sm mt-2 flex-grow">Automation, predictive maintenance & production
+                    intelligence.
+                </p>
+                <div class="mt-auto flex justify-end">
+                    <button onclick="openModal('manufacturing')"
+                        class="relative px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition
+                        after:content after:absolute after:-inset-0.5 after:rounded-lg after:shadow-xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                        Explore Solutions
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600"
-                alt="Logistics & Transportation">
-            <div>
-                <h3 class="text-2xl font-semibold">Logistics & Transportation</h3>
-                <p>Fleet tracking, route optimization & real-time dispatching.</p>
-                <a class="btn hover:shadow-xl transform hover:scale-105 transition" href="#">Know More</a>
+            <!-- CARD 5 -->
+            <div class="industry-card bg-white rounded-xl shadow p-4 flex flex-col">
+                <div class="img-box relative rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600"
+                        class="w-full h-48 object-cover">
+                    <span class="badge absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full opacity-0"><i
+                            class="fas fa-truck"></i></span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold">Logistics & Transportation</h3>
+                <p class="text-gray-600 text-sm mt-2 flex-grow">Fleet tracking, route optimization & real-time
+                    dispatching.
+                </p>
+                <div class="mt-auto flex justify-end">
+                    <button onclick="openModal('logistics')"
+                        class="relative px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition
+                        after:content after:absolute after:-inset-0.5 after:rounded-lg after:shadow-xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                        Explore Solutions
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=600" alt="Oil & Gas">
-            <div>
-                <h3 class="text-2xl font-semibold">Oil & Gas</h3>
-                <p>Pipeline monitoring, hazard detection & workflow automation.</p>
-                <a class="btn hover:shadow-xl transform hover:scale-105 transition" href="#">Discover</a>
+            <!-- CARD 6 -->
+            <div class="industry-card bg-white rounded-xl shadow p-4 flex flex-col">
+                <div class="img-box relative rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=600"
+                        class="w-full h-48 object-cover">
+                    <span class="badge absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full opacity-0"><i
+                            class="fas fa-oil-can"></i></span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold">Oil & Gas</h3>
+                <p class="text-gray-600 text-sm mt-2 flex-grow">Pipeline monitoring, hazard detection & workflow
+                    automation.
+                </p>
+                <div class="mt-auto flex justify-end">
+                    <button onclick="openModal('oilgas')"
+                        class="relative px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition
+                        after:content after:absolute after:-inset-0.5 after:rounded-lg after:shadow-xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                        Explore Solutions
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?w=600" alt="Energy & Utilities">
-            <div>
-                <h3 class="text-2xl font-semibold">Energy & Utilities</h3>
-                <p>Smart grids, IoT meters & consumption analytics.</p>
-                <a class="btn hover:shadow-xl transform hover:scale-105 transition" href="#">Explore</a>
+            <!-- CARD 7 -->
+            <div class="industry-card bg-white rounded-xl shadow p-4 flex flex-col">
+                <div class="img-box relative rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?w=600"
+                        class="w-full h-48 object-cover">
+                    <span class="badge absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full opacity-0"><i
+                            class="fas fa-bolt"></i></span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold">Energy & Utilities</h3>
+                <p class="text-gray-600 text-sm mt-2 flex-grow">Smart grids, IoT meters & consumption analytics.</p>
+                <div class="mt-auto flex justify-end">
+                    <button onclick="openModal('energy')"
+                        class="relative px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition
+                        after:content after:absolute after:-inset-0.5 after:rounded-lg after:shadow-xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                        Explore Solutions
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600" alt="Professional Services">
-            <div>
-                <h3 class="text-2xl font-semibold">Professional Services</h3>
-                <p>CRM systems, workflow automation & business intelligence.</p>
-                <a class="btn hover:shadow-xl transform hover:scale-105 transition" href="#">Learn More</a>
+            <!-- CARD 8 -->
+            <div class="industry-card bg-white rounded-xl shadow p-4 flex flex-col">
+                <div class="img-box relative rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600"
+                        class="w-full h-48 object-cover">
+                    <span class="badge absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full opacity-0"><i
+                            class="fas fa-user-tie"></i></span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold">Professional Services</h3>
+                <p class="text-gray-600 text-sm mt-2 flex-grow">Workflow automation, CRM systems & business
+                    intelligence.</p>
+                <div class="mt-auto flex justify-end">
+                    <button onclick="openModal('professional')"
+                        class="relative px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition
+                        after:content after:absolute after:-inset-0.5 after:rounded-lg after:shadow-xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                        Explore Solutions
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600" alt="Telecoms">
-            <div>
-                <h3 class="text-2xl font-semibold">Telecoms</h3>
-                <p>Network monitoring, subscriber analytics & automation tools.</p>
-                <a class="btn hover:shadow-xl transform hover:scale-105 transition" href="#">View Solutions</a>
+            <!-- CARD 9 -->
+            <div class="industry-card bg-white rounded-xl shadow p-4 flex flex-col">
+                <div class="img-box relative rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600"
+                        class="w-full h-48 object-cover">
+                    <span class="badge absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full opacity-0"><i
+                            class="fas fa-wifi"></i></span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold">Telecoms</h3>
+                <p class="text-gray-600 text-sm mt-2 flex-grow">Network monitoring, subscriber analytics & automation
+                    tools.
+                </p>
+                <div class="mt-auto flex justify-end">
+                    <button onclick="openModal('telecoms')"
+                        class="relative px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition
+                        after:content after:absolute after:-inset-0.5 after:rounded-lg after:shadow-xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                        Explore Solutions
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600" alt="Travel & Hospitality">
-            <div>
-                <h3 class="text-2xl font-semibold">Travel & Hospitality</h3>
-                <p>Booking engines, guest apps & analytics dashboards.</p>
-                <a class="btn hover:shadow-xl transform hover:scale-105 transition" href="#">Discover More</a>
+            <!-- CARD 10 -->
+            <div class="industry-card bg-white rounded-xl shadow p-4 flex flex-col">
+                <div class="img-box relative rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600"
+                        class="w-full h-48 object-cover">
+                    <span class="badge absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full opacity-0"><i
+                            class="fas fa-plane"></i></span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold">Travel & Hospitality</h3>
+                <p class="text-gray-600 text-sm mt-2 flex-grow">Booking engines, guest apps & analytics dashboards.</p>
+                <div class="mt-auto flex justify-end">
+                    <button onclick="openModal('travel')"
+                        class="relative px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition
+                        after:content after:absolute after:-inset-0.5 after:rounded-lg after:shadow-xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
+                        Explore Solutions
+                    </button>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
+    <!-- INDUSTRY CARDS END -->
+
+    <!-- Modal Container -->
+    <div id="modal-container"></div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
@@ -695,6 +1106,224 @@
 
             box.classList.toggle("hidden");
             arrow.classList.toggle("rotate-90");
+        }
+
+        // ========================= MODAL JAVASCRIPT =========================
+
+        const industryData = {
+            realestate: {
+                title: 'Real Estate Solutions',
+                icon: 'fa-building',
+                description: 'Transform your real estate business with cutting-edge technology solutions designed for modern property management.',
+                services: [
+                    { title: 'Property Management System', desc: 'Complete digital solution for managing properties, tenants, leases, and maintenance requests', icon: 'fa-house-laptop' },
+                    { title: 'Smart Listing Portal', desc: 'AI-powered property listing platform with virtual tours, advanced search, and real-time updates', icon: 'fa-list' },
+                    { title: 'Tenant Mobile App', desc: 'Give tenants easy access to payments, maintenance requests, documents, and communication', icon: 'fa-mobile-screen' },
+                    { title: 'CRM for Realtors', desc: 'Manage leads, track interactions, automate follow-ups, and close deals faster', icon: 'fa-handshake' },
+                    { title: 'Document Management', desc: 'Digital storage for contracts, agreements, and property documents with e-signature support', icon: 'fa-file-contract' },
+                    { title: 'Analytics Dashboard', desc: 'Real-time insights on occupancy rates, revenue, market trends, and performance metrics', icon: 'fa-chart-line' }
+                ],
+                benefits: ['Reduce operational costs by 40%', 'Automate 80% of routine tasks', 'Improve tenant satisfaction', 'Increase property visibility online', 'Faster deal closures']
+            },
+            construction: {
+                title: 'Engineering & Construction Solutions',
+                icon: 'fa-tools',
+                description: 'Streamline your construction projects with powerful project management and field automation tools.',
+                services: [
+                    { title: 'Project Management Platform', desc: 'Plan, schedule, and track construction projects with Gantt charts, milestones, and resource allocation', icon: 'fa-diagram-project' },
+                    { title: 'Field Data Collection App', desc: 'Mobile app for site inspections, progress photos, safety checklists, and daily reports', icon: 'fa-clipboard-check' },
+                    { title: 'Equipment Tracking System', desc: 'Real-time tracking of machinery, vehicles, and tools with maintenance scheduling', icon: 'fa-gears' },
+                    { title: 'BIM Integration', desc: 'Connect your Building Information Modeling with project workflows and collaboration tools', icon: 'fa-cubes' },
+                    { title: 'Budget & Cost Control', desc: 'Track expenses, manage budgets, generate invoices, and monitor project profitability', icon: 'fa-dollar-sign' },
+                    { title: 'Safety & Compliance', desc: 'Digital safety inspections, incident reporting, and regulatory compliance management', icon: 'fa-shield-halved' }
+                ],
+                benefits: ['Complete project visibility', 'Reduce delays and cost overruns', 'Improve team collaboration', 'Real-time progress tracking', 'Enhanced safety compliance']
+            },
+            retail: {
+                title: 'Retail Solutions',
+                icon: 'fa-store',
+                description: 'Modernize your retail operations with smart POS systems, inventory management, and customer analytics.',
+                services: [
+                    { title: 'Smart POS System', desc: 'Fast, intuitive point-of-sale with barcode scanning, multiple payment methods, and receipt printing', icon: 'fa-cash-register' },
+                    { title: 'Inventory Management', desc: 'Real-time stock tracking, automated reordering, barcode system, and warehouse management', icon: 'fa-boxes-stacked' },
+                    { title: 'E-Commerce Platform', desc: 'Online store integrated with your physical inventory, payments, and shipping', icon: 'fa-cart-shopping' },
+                    { title: 'Customer Loyalty Program', desc: 'Digital loyalty cards, points system, rewards, and personalized promotions', icon: 'fa-gift' },
+                    { title: 'Sales Analytics', desc: 'Track sales trends, best sellers, customer behavior, and generate insights', icon: 'fa-chart-pie' },
+                    { title: 'Multi-Store Management', desc: 'Centralized control of multiple retail locations with unified reporting', icon: 'fa-store' }
+                ],
+                benefits: ['Faster checkout experience', 'Prevent stockouts and overstocking', 'Increase customer retention', 'Data-driven business decisions', 'Seamless omnichannel experience']
+            },
+            manufacturing: {
+                title: 'Manufacturing Solutions',
+                icon: 'fa-industry',
+                description: 'Optimize your production with automation, predictive maintenance, and real-time production intelligence.',
+                services: [
+                    { title: 'Production Planning System', desc: 'Schedule production runs, manage work orders, allocate resources, and track capacity', icon: 'fa-calendar-days' },
+                    { title: 'Quality Control Management', desc: 'Digital inspection checklists, defect tracking, quality reports, and compliance documentation', icon: 'fa-check-double' },
+                    { title: 'Machine Monitoring (IIoT)', desc: 'Real-time equipment monitoring, performance metrics, and automated alerts', icon: 'fa-gauge-high' },
+                    { title: 'Predictive Maintenance', desc: 'AI-powered maintenance predictions to prevent breakdowns and reduce downtime', icon: 'fa-wrench' },
+                    { title: 'Supply Chain Integration', desc: 'Connect with suppliers, track raw materials, manage procurement, and optimize inventory', icon: 'fa-truck-fast' },
+                    { title: 'Production Analytics', desc: 'OEE tracking, production efficiency, waste reduction, and performance dashboards', icon: 'fa-chart-column' }
+                ],
+                benefits: ['Increase production efficiency', 'Reduce equipment downtime', 'Lower operational costs', 'Improve product quality', 'Real-time production visibility']
+            },
+            logistics: {
+                title: 'Logistics & Transportation Solutions',
+                icon: 'fa-truck',
+                description: 'Optimize your fleet operations with GPS tracking, route optimization, and real-time dispatching.',
+                services: [
+                    { title: 'Fleet Management System', desc: 'Real-time GPS tracking of vehicles, driver behavior monitoring, and fuel management', icon: 'fa-location-dot' },
+                    { title: 'Route Optimization', desc: 'AI-powered route planning to reduce fuel costs, save time, and improve delivery efficiency', icon: 'fa-route' },
+                    { title: 'Dispatch Management', desc: 'Assign jobs to drivers, track deliveries in real-time, and manage schedules', icon: 'fa-clipboard-list' },
+                    { title: 'Warehouse Management', desc: 'Inventory tracking, order fulfillment, barcode scanning, and warehouse optimization', icon: 'fa-warehouse' },
+                    { title: 'Delivery Mobile App', desc: 'Driver app with navigation, proof of delivery, digital signatures, and real-time updates', icon: 'fa-mobile-screen-button' },
+                    { title: 'Customer Tracking Portal', desc: 'Let customers track their shipments in real-time with ETA and delivery notifications', icon: 'fa-eye' }
+                ],
+                benefits: ['Reduce fuel costs by 25%', 'Improve delivery times', 'Better fleet utilization', 'Enhanced customer experience', 'Complete shipment visibility']
+            },
+            oilgas: {
+                title: 'Oil & Gas Solutions',
+                icon: 'fa-oil-can',
+                description: 'Enhance safety and efficiency with pipeline monitoring, hazard detection, and workflow automation.',
+                services: [
+                    { title: 'Pipeline Monitoring System', desc: 'IoT sensors for real-time pipeline monitoring, leak detection, and pressure tracking', icon: 'fa-pipe' },
+                    { title: 'Safety & Compliance Platform', desc: 'Digital safety inspections, incident reporting, and regulatory compliance management', icon: 'fa-hard-hat' },
+                    { title: 'Asset Management', desc: 'Track equipment, schedule maintenance, manage certifications, and optimize asset lifecycle', icon: 'fa-oil-well' },
+                    { title: 'Field Operations App', desc: 'Mobile solution for field workers with offline capability, data collection, and reporting', icon: 'fa-mobile' },
+                    { title: 'Production Monitoring', desc: 'Real-time production data, well performance analytics, and optimization recommendations', icon: 'fa-chart-area' },
+                    { title: 'Emergency Response System', desc: 'Rapid incident response, automated alerts, emergency protocols, and crisis management', icon: 'fa-circle-exclamation' }
+                ],
+                benefits: ['Enhanced safety protocols', 'Reduce environmental risks', 'Optimize production output', 'Predictive maintenance', 'Regulatory compliance assurance']
+            },
+            energy: {
+                title: 'Energy & Utilities Solutions',
+                icon: 'fa-bolt',
+                description: 'Modernize your utility operations with smart grids, IoT meters, and advanced consumption analytics.',
+                services: [
+                    { title: 'Smart Grid Management', desc: 'Monitor and control electrical grid operations with real-time data and automated responses', icon: 'fa-network-wired' },
+                    { title: 'Smart Meter Integration', desc: 'Connect IoT meters for automatic readings, billing, and consumption pattern analysis', icon: 'fa-gauge' },
+                    { title: 'Customer Portal', desc: 'Self-service portal for bill payments, usage tracking, outage reporting, and service requests', icon: 'fa-user' },
+                    { title: 'Outage Management System', desc: 'Quick outage detection, crew dispatch, restoration tracking, and customer notifications', icon: 'fa-plug' },
+                    { title: 'Energy Analytics', desc: 'Consumption patterns, demand forecasting, load balancing, and efficiency optimization', icon: 'fa-chart-simple' },
+                    { title: 'Renewable Energy Integration', desc: 'Manage solar, wind, and other renewable sources with grid integration and monitoring', icon: 'fa-solar-panel' }
+                ],
+                benefits: ['Reduce energy losses', 'Improve grid reliability', 'Enhanced customer satisfaction', 'Automated meter reading', 'Better demand management']
+            },
+            professional: {
+                title: 'Professional Services Solutions',
+                icon: 'fa-user-tie',
+                description: 'Streamline your professional services with workflow automation, CRM, and business intelligence.',
+                services: [
+                    { title: 'CRM & Lead Management', desc: 'Capture leads, track interactions, manage pipeline, and automate follow-ups', icon: 'fa-users' },
+                    { title: 'Project & Time Tracking', desc: 'Track billable hours, manage projects, allocate resources, and generate invoices', icon: 'fa-clock' },
+                    { title: 'Document Management System', desc: 'Centralized storage for contracts, proposals, reports with version control and sharing', icon: 'fa-folder-open' },
+                    { title: 'Client Portal', desc: 'Give clients access to project updates, documents, invoices, and communication', icon: 'fa-desktop' },
+                    { title: 'Workflow Automation', desc: 'Automate repetitive tasks, approvals, notifications, and business processes', icon: 'fa-arrows-spin' },
+                    { title: 'Business Intelligence', desc: 'Comprehensive analytics on revenue, profitability, client retention, and team performance', icon: 'fa-chart-line' }
+                ],
+                benefits: ['Increase billable hours', 'Improve client relationships', 'Streamline operations', 'Better resource utilization', 'Data-driven decisions']
+            },
+            telecoms: {
+                title: 'Telecommunications Solutions',
+                icon: 'fa-wifi',
+                description: 'Enhance network performance with monitoring tools, subscriber analytics, and automation.',
+                services: [
+                    { title: 'Network Monitoring System', desc: 'Real-time network performance monitoring, bandwidth tracking, and automated alerts', icon: 'fa-tower-cell' },
+                    { title: 'Customer Management Portal', desc: 'Subscriber onboarding, service activation, billing, and self-service support', icon: 'fa-id-card' },
+                    { title: 'Billing & Revenue Management', desc: 'Automated billing cycles, payment processing, invoice generation, and revenue assurance', icon: 'fa-file-invoice-dollar' },
+                    { title: 'Network Planning Tools', desc: 'Tower site analysis, coverage mapping, capacity planning, and network optimization', icon: 'fa-map-location-dot' },
+                    { title: 'Fault Management System', desc: 'Automated fault detection, ticket creation, technician dispatch, and resolution tracking', icon: 'fa-triangle-exclamation' },
+                    { title: 'Analytics & Reporting', desc: 'Subscriber analytics, usage patterns, network performance, and business metrics', icon: 'fa-chart-bar' }
+                ],
+                benefits: ['Improve network uptime', 'Reduce operational costs', 'Better customer experience', 'Faster issue resolution', 'Data-driven decision making']
+            },
+            travel: {
+                title: 'Travel & Hospitality Solutions',
+                icon: 'fa-plane',
+                description: 'Elevate guest experiences with booking engines, mobile apps, and advanced analytics.',
+                services: [
+                    { title: 'Online Booking Engine', desc: 'Integrated reservation system with real-time availability, pricing, and payment processing', icon: 'fa-calendar-check' },
+                    { title: 'Guest Mobile App', desc: 'Mobile check-in, digital keys, room service, concierge, and personalized recommendations', icon: 'fa-mobile-alt' },
+                    { title: 'Property Management System', desc: 'Manage reservations, housekeeping, inventory, and operations from a single platform', icon: 'fa-hotel' },
+                    { title: 'Customer Relationship Management', desc: 'Guest profiles, preferences tracking, automated communication, and loyalty programs', icon: 'fa-users-cog' },
+                    { title: 'Revenue Management', desc: 'Dynamic pricing, demand forecasting, channel management, and revenue optimization', icon: 'fa-chart-line' },
+                    { title: 'Analytics Dashboard', desc: 'Occupancy trends, revenue metrics, guest satisfaction, and operational insights', icon: 'fa-chart-pie' }
+                ],
+                benefits: ['Increase direct bookings', 'Improve guest satisfaction', 'Optimize revenue', 'Streamline operations', 'Personalized guest experiences']
+            }
+        };
+
+        function openModal(industry) {
+            const data = industryData[industry];
+            if (!data) return;
+
+            const modalHTML = `
+                <div class="modal active" onclick="closeModal(event)">
+                    <div class="modal-content" onclick="event.stopPropagation()">
+                        <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-8 relative">
+                            <button onclick="closeModal()" class="absolute top-4 right-4 text-white hover:text-gray-200 text-3xl font-bold transition">
+                                &times;
+                            </button>
+                            <div class="flex items-center gap-4">
+                                <div class="bg-white/20 p-4 rounded-xl">
+                                    <i class="fas ${data.icon} text-4xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-3xl font-bold">${data.title}</h2>
+                                    <p class="text-blue-100 mt-2">${data.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Solutions</h3>
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                    ${data.services.map(service => `
+                                        <div class="service-item p-4 rounded-lg border border-gray-200 hover:border-blue-500">
+                                            <div class="flex items-start gap-3">
+                                                <div class="bg-blue-100 p-3 rounded-lg flex-shrink-0">
+                                                    <i class="fas ${service.icon} text-blue-600 text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-gray-800 mb-1">${service.title}</h4>
+                                                    <p class="text-sm text-gray-600">${service.desc}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                <div class="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        Key Benefits
+                                    </h3>
+                                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        ${data.benefits.map(benefit => `
+                                            <li class="flex items-center gap-2 text-gray-700">
+                                                <i class="fas fa-check text-green-600"></i>
+                                                ${benefit}
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                                <div class="mt-8 text-center">
+                                    <a href="index.html#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                                        <i class="fas fa-paper-plane mr-2"></i>
+                                    Start Your Project
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('modal-container').innerHTML = modalHTML;
+        }
+
+        function closeModal(event) {
+            if (event) event.preventDefault();
+            document.getElementById('modal-container').innerHTML = '';
         }
 
     </script>
