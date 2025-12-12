@@ -1,0 +1,26 @@
+{
+  "name": "nexoraupdated",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000N\u0000E\u0000X\u0000O\u0000R\u0000A\u0000\r\u0000 \u0000\r\u0000 \u0000\r\u0000 \u0000#\u0000 \u0000n\u0000e\u0000x\u0000o\u0000r\u0000a\u0000u\u0000p\u0000d\u0000a\u0000t\u0000e\u0000d\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uziii-stack/nexoraupdated.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/uziii-stack/nexoraupdated/issues"
+  },
+  "homepage": "https://github.com/uziii-stack/nexoraupdated#readme",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "cheerio": "^1.1.2",
+    "dotenv": "^17.2.3"
+  }
+}
