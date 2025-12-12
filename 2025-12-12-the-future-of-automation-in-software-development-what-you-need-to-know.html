@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs - Nexora Technologies</title>
+    <title>The Future of Automation in software development: What You Need to Know - Nexora Technologies</title>
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,50 +24,6 @@
             footer h4 {
                 font-size: 1rem !important;
             }
-        }
-
-        .dropdown-item {
-            display: block;
-            padding: 8px 12px;
-            color: #4B5563;
-            border-radius: 8px;
-            transition: 0.2s;
-        }
-
-        .dropdown-item:hover {
-            background: #f1f5f9;
-            color: #4169E1;
-        }
-
-        .mobile-link {
-            display: block;
-            padding: 12px 0;
-            font-weight: 600;
-            color: #4B5563;
-        }
-
-        .mobile-sublink {
-            color: #4B5563;
-            font-size: 15px;
-            padding: 5px 0;
-        }
-
-        .pulse-glow {
-            animation: glow 2s infinite alternate;
-        }
-
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 4px #4169E1;
-            }
-
-            to {
-                box-shadow: 0 0 15px #4169E1;
-            }
-        }
-
-        .rotate-90 {
-            transform: rotate(90deg);
         }
 
         /* Mobile Menu Compact Styling */
@@ -117,20 +73,49 @@
         }
 
 
-        /* News Ticker Animation */
 
-        @keyframes newsTickerMove {
-            0% {
-                transform: translateX(100%);
+        .dropdown-item {
+            display: block;
+            padding: 8px 12px;
+            color: #4B5563;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background: #f1f5f9;
+            color: #4169E1;
+        }
+
+        .mobile-link {
+            display: block;
+            padding: 12px 0;
+            font-weight: 600;
+            color: #4B5563;
+        }
+
+        .mobile-sublink {
+            color: #4B5563;
+            font-size: 15px;
+            padding: 5px 0;
+        }
+
+        .pulse-glow {
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 4px #4169E1;
             }
 
-            100% {
-                transform: translateX(-100%);
+            to {
+                box-shadow: 0 0 15px #4169E1;
             }
         }
 
-        .animate-newsTicker {
-            animation: newsTickerMove 22s linear infinite;
+        .rotate-90 {
+            transform: rotate(90deg);
         }
 
         /* Mobile Menu Compact Styling */
@@ -338,172 +323,66 @@
     </nav>
 
 
-
-
-
-    <!-- ========================= BLOG HERO SECTION ========================= -->
+    <!-- BLOG HERO -->
     <section class="w-full relative py-24 text-center text-white overflow-hidden">
-
-        <!-- Background Image -->
         <div class="absolute inset-0 w-full h-full">
-            <img src="./service-details-01.jpg" alt="Blog Header" class="w-full h-full object-cover">
-            <!-- Dark Overlay -->
+            <img src="./blog-the-future-of-automation-in-software-development-what-you-need-to-know-2025-12-12.jpg" alt="Blog Cover" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/60"></div>
         </div>
-
-        <!-- Content -->
         <div class="relative z-10 container mx-auto px-4">
-
-            <!-- Title -->
-            <h1 class="text-4xl sm:text-5xl font-extrabold mb-3 tracking-tight">
-                <span class="text-blue-500">Nexora</span> Blogs
-            </h1>
-
-            <!-- Breadcrumb Navigation -->
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-3 tracking-tight">The Future of Automation in software development: What You Need to Know</h1>
             <p class="text-lg sm:text-xl text-gray-200 font-medium bg-white/10 inline-block px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">
                 <a href="index.html" class="hover:text-blue-400">Home</a>
                 <span class="mx-2 text-blue-400">&gt;</span>
                 <a href="blogs.html" class="hover:text-blue-400">Blogs</a>
             </p>
         </div>
-
     </section>
 
-
-    <section class="max-w-6xl mx-auto px-6 py-10">
-
-        <!-- OUTER CARD -->
-        <div class="bg-white p-4 sm:p-6 rounded-xl shadow flex flex-col sm:flex-row items-start sm:items-center gap-4">
-
-            <!-- TITLE -->
-            <h3 class="text-lg sm:text-xl font-semibold text-blue-600">
-                Latest News:
-            </h3>
-
-            <!-- ANIMATION BOX -->
-            <div class="relative h-auto w-full sm:w-auto">
-                <span id="newsItem" class="text-gray-800 text-sm sm:text-base block">
-                    Loading...
-                </span>
-            </div>
-
-        </div>
-
-
-    </section>
-
-
-
-
-    <!-- ========================= BLOG LIST SECTION ========================= -->
-    <section class="bg-gray-100 py-20">
-        <div class="max-w-6xl mx-auto px-6">
-
-            <h3 class="text-3xl font-bold mb-10 text-black">
-                Read our blogs to know what’s happening
-            </h3>
-
-            <div class="grid md:grid-cols-3 gap-10">
-            <!-- BLOG CARD -->
-            <div class="bg-white rounded-lg shadow hover:scale-105 transition overflow-hidden">
-                <img src="./blog-the-future-of-automation-in-software-development-what-you-need-to-know-2025-12-12.jpg" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="text-xl font-semibold mb-2">The Future of Automation in software development: What You Need to Know</h4>
-                    <p class="text-gray-600 text-sm mb-4">
-                        Discover the latest trends and insights about Automation in software development. Learn why it matters and how to leverage it for success in the modern tech landscape.
-                    </p>
-                    <p class="text-gray-400 text-xs mb-2">Dec 13, 2025</p>
-                    <a href="./2025-12-12-the-future-of-automation-in-software-development-what-you-need-to-know.html" class="text-blue-600 hover:underline">Read More →</a>
-                </div>
-            </div>
-        
-            <!-- BLOG CARD -->
-            <div class="bg-white rounded-lg shadow hover:scale-105 transition overflow-hidden">
-                <img src="./blog-the-future-of-cybersecurity-tips-for-developers-what-you-need-to-know-2025-12-12.jpg" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="text-xl font-semibold mb-2">The Future of Cybersecurity tips for developers: What You Need to Know</h4>
-                    <p class="text-gray-600 text-sm mb-4">
-                        Discover the latest trends and insights about Cybersecurity tips for developers. Learn why it matters and how to leverage it for success in the modern tech landscape.
-                    </p>
-                    <p class="text-gray-400 text-xs mb-2">Dec 13, 2025</p>
-                    <a href="./2025-12-12-the-future-of-cybersecurity-tips-for-developers-what-you-need-to-know.html" class="text-blue-600 hover:underline">Read More →</a>
-                </div>
-            </div>
-        
-
-                <!-- BLOG CARD -->
-                <div class="bg-white rounded-lg shadow hover:scale-105 transition overflow-hidden">
-                    <img src="./blog_crm.jpg" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold mb-2">How Enterprise CRM Transforms Business Efficiency</h4>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Discover how AI-powered enterprise CRM solutions streamline workflows, automate tasks, and
-                            enhance overall organizational productivity.
-                        </p>
-                        <p class="text-gray-400 text-xs mb-2">Jul 22, 2024</p>
-                        <a href="./blog-crm.html" class="text-blue-600 hover:underline">Read More →</a>
-
-                    </div>
-                </div>
-
-                <!-- BLOG CARD -->
-                <div class="bg-white rounded-lg shadow hover:scale-105 transition overflow-hidden">
-                    <img src="./blog_ai.jpg" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold mb-2">AI Integration: The Future of Smart Automation</h4>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Learn how next-gen AI automation enhances accuracy, reduces manual workload, and empowers
-                            businesses with intelligent decision-making.
-                        </p>
-                        <p class="text-gray-400 text-xs mb-2">Aug 10, 2024</p>
-                        <a href="./blog-ai.html" class="text-blue-600 hover:underline">Read More →</a>
-                    </div>
-                </div>
-
-                <!-- BLOG CARD -->
-                <div class="bg-white rounded-lg shadow hover:scale-105 transition overflow-hidden">
-                    <img src="./blog_web_dev.jpg" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold mb-2">Building Scalable Web Applications in 2025</h4>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Explore modern frameworks, best practices, and architectural techniques to develop scalable
-                            and future-ready web applications.
-                        </p>
-
-                        <p class="text-gray-400 text-xs mb-2">Sep 02, 2024</p>
-                        <a href="./blog-web-app.html" class="text-blue-600 hover:underline">Read More →</a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- ========================= CTA SECTION ========================= -->
-    <section class="w-full flex justify-center my-12 lg:my-20">
-        <div class="bg-gradient-to-br from-black to-[#0d0d0d] text-white p-6 sm:p-8 lg:p-12 rounded-3xl w-11/12 max-w-3xl text-center shadow-2xl">
-
-            <h2 class="text-3xl font-bold mb-3">
-                Ready to start a project or need expert advice?
-            </h2>
-
-            <p class="opacity-80 mb-8 text-lg">
-                We're here to help.
+    <!-- BLOG CONTENT -->
+    <section class="max-w-4xl mx-auto px-6 py-12 bg-white rounded-xl shadow"><img src="./blog-the-future-of-automation-in-software-development-what-you-need-to-know-2025-12-12.jpg" alt="AI Integration Blog" class="w-full h-64 object-cover rounded-lg mb-6"><h2 class="text-2xl font-bold text-blue-600 mb-4">The Future of Automation in software development: What You Need to Know</h2>
+            <p class="text-gray-700 mb-4">
+                In the rapidly evolving world of technology, <strong>Automation in software development</strong> has emerged as a key area of focus for professionals and businesses alike. 
+                As we move further into the digital age, understanding the nuances of this subject is becoming increasingly critical.
+            </p>
+            
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Why Automation in software development Matters Now</h3>
+            <p class="text-gray-700 mb-4">
+                The shift towards Automation in software development is not just a trend; it's a fundamental change in how we approach problem-solving and efficiency.
+                Experts predict that this field will continue to grow, offering new opportunities for innovation and optimization.
+                Whether you are a developer, a designer, or a business owner, staying updated with these changes is essential.
             </p>
 
-            <!-- Styled Button -->
-            <a class="relative px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold inline-block transition
-            after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl 
-            after:shadow-[0_0_25px_rgba(0,122,255,0.5)] after:opacity-0 
-            hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
-                Build with Us
-            </a>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Key Benefits and Trends</h3>
+            <ul class="list-disc pl-5 text-gray-700 mb-4 space-y-2">
+                <li><strong>Efficiency:</strong> Streamlining workflows to save time and resources.</li>
+                <li><strong>Scalability:</strong> Building systems that can grow with demand.</li>
+                <li><strong>Innovation:</strong> leveraging new tools to solve old problems in creative ways.</li>
+            </ul>
 
-        </div>
+            <p class="text-gray-700 mb-4">
+                To stay ahead, it is crucial to adopt a continuous learning mindset. Experiment with new tools, read documentation, and engage with the community.
+                The future belongs to those who adapt, and Automation in software development is a great place to start your journey.
+            </p>
+
+            <p class="text-gray-700 mb-4">
+                Start exploring <strong>Automation in software development</strong> today and unlock new potentials for your career or business.
+            </p>
+        <p class="text-gray-400 text-sm mb-6">Dec 13, 2025 • By AutoBlog Bot</p></section>
+
+
+    <!-- COMMENTS -->
+    <section class="max-w-4xl mx-auto px-6 py-6">
+        <h3 class="text-xl font-bold mb-4">Leave a Reply</h3>
+        <form id="commentForm" class="flex flex-col gap-4">
+            <input type="text" id="name" placeholder="Name" class="border p-2 rounded">
+            <input type="email" id="email" placeholder="Email" class="border p-2 rounded">
+            <textarea id="comment" placeholder="Comment" class="border p-2 rounded"></textarea>
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Post Comment</button>
+        </form>
+
+        <div id="commentsSection" class="mt-6 space-y-4"></div>
     </section>
-
 
     <!-- ========================= FOOTER ========================= -->
     <footer class="bg-gray-900 text-gray-300 py-12">
@@ -577,6 +456,8 @@
             </div>
         </div>
     </footer>
+
+
     <script>
         // Mobile Menu Toggle
         function toggleMenu() {
@@ -633,45 +514,34 @@
 
             lastScroll = currentScroll;
         });
-        // Your news list
-        const newsList = [
-            "Nexora Launches New AI-Powered CRM Solution",
-            "How Nexora is Revolutionizing Web Development in 2024",
-            "Top 5 Trends in Mobile App Development by Nexora Experts",
-            "Nexora Expands Services to Include Blockchain Solutions",
-            "Client Success Story: Boosting Efficiency with Nexora's Automation Tools"
-
-        ];
-
-        let index = 0;
-        const item = document.getElementById("newsItem");
-
-        function rotateNews() {
-            // Fade out
-            item.classList.remove("opacity-150");
-            item.classList.add("opacity-0");
-
-            setTimeout(() => {
-                // Change text
-                item.textContent = newsList[index];
-
-                // Fade in
-                item.classList.remove("opacity-0");
-                item.classList.add("opacity-150");
-
-                // Update index
-                index = (index + 1) % newsList.length;
-
-            }, 700); // match duration for smooth fade
-        }
-
-        // Start cycle
-        rotateNews();
-        setInterval(rotateNews, 3500);
 
 
+        const form = document.getElementById("commentForm");
+        const commentsSection = document.getElementById("commentsSection");
+        const blogSlug = "blog-crm"; // unique slug for this page
 
+        const loadComments = () => {
+            const comments = JSON.parse(localStorage.getItem(blogSlug) || "[]");
+            commentsSection.innerHTML = comments.map(c => `
+    <div class="border p-3 rounded">
+      <p class="font-bold">${c.name}</p>
+      <p class="text-sm text-gray-600">${c.comment}</p>
+    </div>
+  `).join("");
+        };
+        loadComments();
 
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const comment = document.getElementById("comment").value.trim();
+            if (!name || !comment) return;
+            const comments = JSON.parse(localStorage.getItem(blogSlug) || "[]");
+            comments.push({ name, comment });
+            localStorage.setItem(blogSlug, JSON.stringify(comments));
+            form.reset();
+            loadComments();
+        });
 
 
 
@@ -684,7 +554,9 @@
             box.classList.toggle("hidden");
             arrow.classList.toggle("rotate-90");
         }
+
     </script>
+
 
 
 </body></html>

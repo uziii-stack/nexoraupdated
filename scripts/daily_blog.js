@@ -22,7 +22,17 @@ const TOPICS = [
     "Tech startup ecosystem",
     "Automation in software development",
     "Cloud computing trends",
-    "Data privacy in the age of AI"
+    "Data privacy in the age of AI",
+    "The Rise of Edge Computing",
+    "Blockchain beyond Crypto",
+    "Sustainable Tech & Green Coding",
+    "Zero Trust Security Architecture",
+    "Quantum Computing: A Beginner's Guide",
+    "Low-Code/No-Code Development Platforms",
+    "The Metaverse: Hype vs Reality",
+    "5G and the Future of Connectivity",
+    "Ethical AI and Bias in Algorithms",
+    "DevOps vs MLOps: What's the Difference?"
 ];
 
 // Ensure logs directory exists
